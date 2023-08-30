@@ -1,7 +1,8 @@
 require('dotenv').config()
-const { express, routes } = require("./controller");
+const express = require('express')
 const path = require("path");
 const app = express();
+const {routes} = require('./controller/index')
 const cookieParser = require("cookie-parser");
 const errorHandling  = require("./middleware/ErrorHandling");
 const cors = require('cors')
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
 // cookieParser & Router
 // cookieParser should be set before router
 
+
 app.use(
   express.static('./static'),
   express.urlencoded({
@@ -27,11 +29,12 @@ app.use(
   }),
   cookieParser(),
   cors(),
-  routes
 )
-// Handling all errors
-app.use(errorHandling);
-// Server
+
+app.use('/api', require('./controller/index'))
+// // Handling all errors
+// app.use(errorHandling);
+// // Server
 
 app.get("^/$|/poin", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./view/index.html"));
@@ -39,6 +42,23 @@ app.get("^/$|/poin", (req, res) => {
 
 app.listen(port, () => {
   console.log(`The server is running on port ${port}`);
-})
+});
 
- 
+
+// updateProduct(req, res) {
+//   const query = `
+//   UPDATE products
+//   SET prodName = '${req.body.prodName}',
+//   prodPrice = '${req.body.prodPrice}',
+//   prodDesc = '${req.body.prodDesc}',
+//   prodUrl = '${req.body.prodUrl}'
+//   WHERE prodID = ${req.params.id};
+//   `
+//   db.query(query, (err, result) => {
+//       if (err) {
+//           console.log(err)
+//       } else {
+//           res.send(result)
+//       }
+//   })
+// }
