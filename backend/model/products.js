@@ -57,7 +57,7 @@ class Products{
     
             res.json({
                 status: res.statusCode,
-                msg: "Product registered successfully"
+                msg: "Product added successfully"
             });
         });
     }

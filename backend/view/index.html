@@ -3,14 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- style sheet -->
+   <style>
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.table-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tr:hover {
+    background-color: #e0e0e0;
+}
+
+h4 {
+    margin: 20px 0;
+}
+
+   </style>
+  <link rel="stylesheet" href="./style.css">
     <title>Routers</title>
 </head>
-<body>
+<body class="container">
     <h2>Routes</h2>
 <div class="tables">
     <h4>Home</h4>
-    <center>
+    
     <table border="1">
         <tr>
             <th>HTTP Methods</th>
@@ -20,13 +75,13 @@
         <tr>
             <td>GET</td>
             <td>/</td>
-            <td>Take you to the Routes page</td>
+            <td>Routes page</td>
 
         </tr>
     </table>
-</center>
+
     <h4>Users</h4>
-    <center>
+ 
     <table border="1">
         <tr>
             <th>HTTP Methods</th>
@@ -59,10 +114,10 @@
             <td>Delete a user</td>
         </tr>
     </table>
-</center>
+
 <!-- PRODUCTS -->
     <h4>Products</h4>
-    <center>
+ 
     <table border="1">
         <tr>
             <th>HTTP Methods</th>
@@ -95,10 +150,10 @@
             <td>DELETE a product</td>
         </tr>
     </table>
-</center>
+<br>
 <!-- ORDERS -->
 <h4>Orders</h4>
-    <center>
+  
     <table border="1">
         <tr>
             <th>HTTP Methods</th>
@@ -117,13 +172,8 @@
         </tr>
         <tr>
             <td>POST</td>
-            <td>/product/new</td>
-            <td>Add a product</td>
-        </tr>
-        <tr>
-            <td>PUT</td>
-            <td>/order/id</td>
-            <td>Edit a order</td>
+            <td>/order/new</td>
+            <td>Add a order</td>
         </tr>
         <tr>
             <td>DELETE</td>
@@ -131,7 +181,7 @@
             <td>DELETE a product</td>
         </tr>
     </table>
-</center>
+
 </div>
 </body>
 </html>
