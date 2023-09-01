@@ -1,41 +1,79 @@
 <template>
-  <div class="container fluid">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="material-symbols-outlined">menu_open</span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <router-link to="/">
+<img src="https://i.postimg.cc/prwPd5L6/blacklogo-removebg-preview.png" alt="logo">
+     </router-link>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
+       <li class="nav-item">
+             <router-link class="nav-link" to="/"><span class="material-symbols-outlined">home</span>
+            </router-link>
+             </li>
+             <li class="nav-item">
+               <router-link class="nav-link" to="/about"><span class="material-symbols-outlined">description</span>
+              </router-link>
+             </li>
+             <li class="nav-item">
+               <router-link class="nav-link" to="/products"><span class="material-symbols-outlined" style="padding-left: 5%;">
+local_mall
+</span></router-link>
+             </li>
+     </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <span class="btn" type="submit"><span class="material-symbols-outlined">search
+      </span></span>
       </form>
+      <ul class="navbar-nav">
+             <li class="nav-item">
+               <router-link class="nav-link" to="/cart"><span class="material-symbols-outlined">shopping_cart</span>
+              </router-link>
+             </li>
+             <li class="nav-item">
+               <router-link class="nav-link" to="/profile"><span class="material-symbols-outlined">account_circle</span>
+              </router-link>
+             </li>
+     </ul>
     </div>
   </div>
 </nav>
   </div>
 </template>
+
+<script>
+</script>
+
+<style>
+
+.nav-bar{
+  background-color: black;
+  padding: 50%;
+}
+.nav-item{
+  padding-left: 5%;
+}
+
+span .material-symbols-outlined{
+  font-variation-settings:
+  'FILL' 5,
+  'wght' 500,
+  'GRAD' 5,
+  'opsz' 44
+}
+
+input{
+  border: 0px !important;
+}
+
+img[alt= "logo"]{
+    width: 15rem;
+    padding-right: 5px !important;
+}
+
+</style>
 
