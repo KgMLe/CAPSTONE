@@ -25,7 +25,7 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: white;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto minmax(0vh, 1fr) auto;
   }
@@ -35,11 +35,13 @@
   }
 
 nav a {
+  padding: 10px;
   font-weight: bold;
-  color: #2c3e50;
+  color: white;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: white;
+  text-decoration: underline #57fffc;
 }
 </style>

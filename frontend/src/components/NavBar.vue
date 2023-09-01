@@ -6,6 +6,9 @@
       <span class="material-symbols-outlined">menu_open</span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <router-link to="/">
+<img src="https://i.postimg.cc/prwPd5L6/blacklogo-removebg-preview.png" alt="logo">
+     </router-link>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
        <li class="nav-item">
              <router-link class="nav-link" to="/"><span class="material-symbols-outlined">home</span>
@@ -16,13 +19,13 @@
               </router-link>
              </li>
              <li class="nav-item">
-               <router-link class="nav-link" to="/products"><span class="material-symbols-outlined">
+               <router-link class="nav-link" to="/products"><span class="material-symbols-outlined" style="padding-left: 5%;">
 local_mall
 </span></router-link>
              </li>
      </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
         <span class="btn" type="submit"><span class="material-symbols-outlined">search
       </span></span>
       </form>
@@ -46,16 +49,31 @@ local_mall
 </script>
 
 <style>
+
+.nav-bar{
+  background-color: black;
+  padding: 50%;
+}
 .nav-item{
   padding-left: 5%;
 }
 
-.material-symbols-outlined{
+span .material-symbols-outlined{
   font-variation-settings:
   'FILL' 5,
   'wght' 500,
   'GRAD' 5,
   'opsz' 44
 }
+
+input{
+  border: 0px !important;
+}
+
+img[alt= "logo"]{
+    width: 15rem;
+    padding-right: 5px !important;
+}
+
 </style>
 
