@@ -25,7 +25,7 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
+  color: black;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto minmax(0vh, 1fr) auto;
   }
