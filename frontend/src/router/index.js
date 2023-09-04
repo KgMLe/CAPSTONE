@@ -35,6 +35,8 @@ const routes = [
     name: 'profile',
     component: () => import('../views/ProfileView.vue')
   },
+
+  // include paths for the categories
 ]
 
 const router = createRouter({

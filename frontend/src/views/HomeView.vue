@@ -19,10 +19,10 @@
   <div class="row text-center" style="padding: 5%;">
     <!-- <h1>Shop by Category</h1> -->
     <router-link to="/"></router-link>
-    <div class="col" id="one"><router-link to="/">Hoodies</router-link></div>
-    <div class="col" id="two"><router-link to="/">Graphic Tees</router-link></div>
-    <div class="col" id="three"><router-link to="/"> Headwear </router-link></div>
-    <div class="col" id="four"><router-link to="/products">All Products</router-link></div>
+    <div class="col" id="one" style="padding: 2%;"><router-link to="/">Hoodies</router-link></div>
+    <div class="col" id="two" style="padding: 2%;"><router-link to="/">Graphic Tees</router-link></div>
+    <div class="col" id="three" style="padding: 2%;"><router-link to="/"> Headwear </router-link></div>
+    <div class="col" id="four" style="padding: 2%;"><router-link to="/products">All Products</router-link></div>
   </div>
 
   </div>
