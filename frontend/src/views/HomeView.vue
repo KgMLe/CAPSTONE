@@ -52,7 +52,7 @@ img[alt= "landing"]{
   padding: 3%;
 }
 
-#one{
+#one, #two, #three, #four{
 /* padding: 2%;   */
 background-image: url("https://i.postimg.cc/gcRbWpKB/il-794x-N-4157880140-i4gk.jpg");
 background-position: center;
@@ -63,15 +63,14 @@ color: white;
 text-decoration: none !important;
 font-size: 2rem;
 font-weight: bold;
+border: 5px solid white;
 }
 
 #two{
-/* padding: 2%;   */
 background-image: url("https://i.postimg.cc/y8hNY9Xt/3-36a87608-30c3-473f-a365-e55a95b05ab6.png");
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-/* background-attachment: fixed; */
 color: white;
 text-decoration: none !important;
 font-size: 2rem;
@@ -79,12 +78,10 @@ font-weight: bold;
 }
 
 #three{
-/* padding: 3%;   */
 background-image: url("https://nhimapparel.com/cdn/shop/products/DSC02626.jpg?v=1687219701&width=950");
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-/* background-attachment: fixed; */
 color: white;
 text-decoration: none !important;
 font-size: 2rem;
@@ -92,12 +89,10 @@ font-weight: bold;
 }
 
 #four{
-/* padding: 2%;   */
 background-image: url("https://i.postimg.cc/k42yfGYM/242799370-407556254046476-2644836799754083763-n.jpg");
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-/* background-attachment: fixed; */
 color: white;
 text-decoration: none !important;
 font-size: 2rem;
