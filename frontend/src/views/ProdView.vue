@@ -40,13 +40,13 @@
 </div>
   </div>
   <!-- DISPLAY PRODUCTS -->
-  <div class="container">
+  <div class="container-fluid">
     <div class="products" v-if="products">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
+      <div class="row row-cols-1 row-cols-md-3 g-4" style="padding: 5%;">
+  <div class="col"  v-for="product in products" :key= "product.prodID">
     <div class="card">
-      <!-- <img :src="product.prodUrl" class="card-img-top" alt="..."> -->
-      <div class="card-body" v-for="product in products" :key= "product.prodID">
+      <div class="card-body">
+          <img :src="product.prodUrl" class="card-img-top" alt="...">
         <h5 class="card-title">{{ product.prodName }}</h5>
     <h6 class="card-subtitle mb-2 text-body-secondary">R{{ product.prodPrice }}</h6>
     <div class="button-contain">
@@ -61,14 +61,12 @@
         <button class="btn">
           View Details
         </button>
-            
-          
         </router-link>
         </div>
       </div> 
-    </div>
-    </div>
   </div>
+  </div>
+</div>
   </div>
   <div v-else class="row justify-content-center">
   <SpinnerComp/>
@@ -134,4 +132,15 @@ font-weight: bold;
 text-align: justify;
 
 }
+
+.card{
+  /* width: 19rem; */
+  border: none;
+  /* margin: 5px; */
+  /* border: 1px solid black; */
+}
+ /* img{
+  width: 300px;
+ } */
+ 
 </style>
