@@ -12,6 +12,7 @@ export default createStore({
     product: null,
     orders: null,
     order: null,
+    cartItems: null,
     category: null,
     categoryHoodies: null,
     categoryGraphicT:null,
@@ -61,6 +62,13 @@ export default createStore({
     },
     updateProduct(state, product){
       state.products = state.products.map(p => p.id === product.id ? product : p)
+    },
+    // cart and order stuff
+    addToCart(state, item) {
+      state.cartItems.push(item);
+    },
+    delFromCart(state, index) {
+      state.cartItems.splice(index, 1);
     },
     setOrders(state, orders){
       state.orders = orders
@@ -241,6 +249,30 @@ export default createStore({
             context.commit("setMsg", "An error occurred while adding the user");
           }
         },
+      // cart stuff
+      // add to cart
+      addToCart({ commit, state }, item) {
+        const existingItemIndex = state.cartItems.findIndex(cartItem => cartItem.id === item.id);
+    
+        if (existingItemIndex !== -1) {
+          // Handle item already in the cart (e.g., increment quantity)
+        } else {
+          commit('addToCart', item);
+        }
+      },
+      // remove from cart
+      removeFromCart({ commit }, index) {
+        commit('removeFromCart', index);
+      },
+
+      // checkout
+      checkout({ commit, state }) {
+        const order = {
+          items: state.cartItems,
+      } 
+      commit('newOrder', order);
+      commit('clearCart'); // Clear the cart after creating an order
+    },
       // fetch orders
       async fetchOrders(context){
         try{

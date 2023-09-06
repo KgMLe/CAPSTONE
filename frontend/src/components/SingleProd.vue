@@ -18,7 +18,7 @@
       <button type="button" class="btn btn-outline-dark">XL</button>
       <button type="button" class="btn btn-outline-dark">XXL</button></li>
     <li class="list-group-item">Color Radio</li>
-    <li class="list-group-item"><button  class="btn card-link">Add to Cart</button></li>
+    <li class="list-group-item"><button  class="btn card-link" >Add to Cart</button></li>
   </ul></div>
   </div>
 </div>
