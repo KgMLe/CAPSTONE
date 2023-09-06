@@ -140,7 +140,7 @@ export default createStore({
         }
       },
        // add Product
-              async registerProduct(context, payload) {
+       async registerProduct(context, payload) {
                 try {
                   const response = await axios.post(`${anchored}product/register`, payload);
                   const { msg, product } = response.data;
@@ -154,9 +154,9 @@ export default createStore({
                 } catch (e) {
                   context.commit("setMsg", "An error occurred while adding the product");
                 }
-            },
-            // deletProduct
-            async deleteProduct(context, id) {
+      },
+      // deletProduct
+      async deleteProduct(context, id) {
               try {
                 const response = await axios.delete(`${anchored}product/${id}`);
                 const { msg } = response.data;
@@ -169,9 +169,9 @@ export default createStore({
               } catch (e) {
                 context.commit("setMsg", "An error occurred while deleting the product");
               }
-            },
-            // updateProduct
-            async updateProduct(context, payload) {
+      },
+      // updateProduct
+      async updateProduct(context, payload) {
               try {
                 const response = await axios.put(`${anchored}product/${payload.id}`, payload);
                 const { msg } = response.data;
@@ -184,7 +184,7 @@ export default createStore({
               } catch (e) {
                 context.commit("setMsg", "An error occurred while updating the product");
               }
-            },
+      },
       // fetch users
       async fetchUsers(context){
         try{
