@@ -5,14 +5,14 @@
         <h1 style="padding 3%">
           <span class="material-symbols-outlined">
 admin_panel_settings
-</span>Welcome back XYZAWQG to the admin page 
+</span> Admin
         </h1>
       </center>
     </div>
     <br>
     <!-- USERS TABLE -->
     <div class="row">
-      <h2>User Table</h2>
+      <h2>Users Table</h2>
     <div style="overflow-x:auto;">
   <table class="striped-table">
     <tr>
@@ -52,6 +52,8 @@ admin_panel_settings
       <th>Price</th>
       <th>Description</th>
       <th>Category</th>
+      <th>Update</th>
+      <th>Delete</th>
     </tr>
     <tbody v-if = "products">
       <tr v-for="product in products" :key= "product.prodID">
@@ -61,7 +63,61 @@ admin_panel_settings
       <td>{{ product.prodPrice }}</td>
       <td>{{ product.prodDesc }}</td>
       <td>{{ product.prodCat }}</td>
+      <td><button class="btn btn-outline-secondary">
+        Update
+      </button></td>
+      <td><button class="btn btn-danger">
+        Delete
+      </button></td>
     </tr>
+    <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#addProductModal"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+</svg>
+      Add Product
+    </button>
+    <!-- ADD PRODUCT MODAL -->
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add a Product</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form @submit.prevent="newProd">
+  <!-- name -->
+  <div class="mb-3">
+  <label for="prodName" class="form-label">Product Name</label>
+  <input type="text" class="form-control" id="prodName" v-model="addProd.prodName">
+  </div>
+    <!-- Profit image  -->
+    <div class="mb-3">
+  <label for="prodImage" class="form-label">Product Image</label>
+  <input type="text" class="form-control" id="prodUrl" v-model="addProd.prodUrl">
+  </div>
+  <!-- Category -->
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+  <input type="text" class="form-control" id="prodCat" v-model="addProd.prodCat">
+  </div>
+  <!-- Price -->
+  <div class="mb-3">
+    <label for="amount" class="form-label">Price</label>
+  <input type="number" class="form-control" id="prodPrice" v-model="addProd.prodPrice">
+  </div>
+   <!-- Description  -->
+   <div class="mb-3">
+  <label for="quantity" class="form-label">Description</label>
+  <input type="text" class="form-control" id="prodDesc" v-model="addProd.prodDesc">
+  </div>
+  </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" @click="newProduct(addProd)">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
     </tbody>
     <div v-else class="row justify-content-center">
   <SpinnerComp/>
@@ -78,6 +134,7 @@ admin_panel_settings
     <tr>
       <th>orderID</th>
       <th>First Name</th>
+      <th>Last name</th>
       <th>Product</th>
       <th>Image</th>
       <th>Price</th>
@@ -85,13 +142,14 @@ admin_panel_settings
       <th>Delivery Status</th>
     </tr>
     <tbody v-if = "orders">
-      <tr v-for="order in products" :key= "order.orderID">
+      <tr v-for="order in orders" :key= "order.orderID">
       <td>{{ order.orderID }}</td>
       <td> {{ }}</td>
-      <td>50</td>
-      <td>50</td>
-      <td>50</td>
-      <td>50</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td></td>
     </tr>
     </tbody>
@@ -111,6 +169,38 @@ export default {
 components:{
         SpinnerComp,
   },
+  data() {  
+    return {
+      addProd: {
+      prodName: "",
+      prodUrl: "",
+      prodPrice: "",
+      prodDesc:"",
+      prodCat: ""
+      },
+
+      editProd :{
+      prodID: "",
+      prodName: "",
+      quantity: "",
+      amount: "",
+      Category: "",
+      prodUrl: ""
+      },
+      // add admin
+      addUser:{
+       userID : "",
+       firstName: "",
+       lastName: "",
+       userAge: "",
+       Gender: "",
+       userRole: "",
+       emailAdd: "",
+       userPass: "",
+       userProfile: ""
+      }
+    }
+  },
 
  computed:{
   users(){
@@ -119,11 +209,28 @@ components:{
   products(){
     return this.$store.state.products
   },
+  newProd (){
+   return this.$store.dispatch('addProduct', this.addProd)
+   },
   orders(){
     return this.$store.orders
   }
  },
 
+ methods:{
+  // add a product
+  async newProduct() {
+    try {
+      await this.$store.dispatch("addProduct",this.addProd);
+      alert("Product Added")
+    } catch (error) {
+      this.errorMsg = "An error occurred."
+    }
+  },
+
+  // edit product
+
+ },
 
  mounted(){
 this.$store.dispatch('fetchUsers'),

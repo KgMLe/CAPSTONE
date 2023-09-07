@@ -140,9 +140,9 @@ export default createStore({
         }
       },
        // add Product
-       async registerProduct(context, payload) {
+       async addProduct(context, payload) {
                 try {
-                  const response = await axios.post(`${anchored}product/register`, payload);
+                  const response = await axios.post(`${anchored}product/new`, payload);
                   const { msg, product } = response.data;
             
                   if (msg) {
@@ -173,7 +173,7 @@ export default createStore({
       // updateProduct
       async updateProduct(context, payload) {
               try {
-                const response = await axios.put(`${anchored}product/${payload.id}`, payload);
+                const response = await axios.patch(`${anchored}product/${payload.id}`, payload);
                 const { msg } = response.data;
           
                 if (msg) {
