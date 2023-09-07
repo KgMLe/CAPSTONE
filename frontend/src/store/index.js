@@ -164,7 +164,7 @@ export default createStore({
                 if (msg) {
                   context.commit("setMsg", msg);
                 } else {
-                  context.commit("setMsg", "Product deleted successfully");
+                  context.commit("deleteProduct", "Product deleted successfully");
                 }
               } catch (e) {
                 context.commit("setMsg", "An error occurred while deleting the product");
