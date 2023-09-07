@@ -6,8 +6,8 @@ class Users{
     //fetch users
     fetchUsers(req, res){
         const query =`
-        SELECT userID, firstName, lastName, userEmail, 
-        userAdd
+        SELECT userID, firstName, lastName, userEmail, userRole,
+        userAdd, userMobile
         FROM users; `
         db.query(query,
              (err, results) => {
@@ -22,7 +22,7 @@ class Users{
     //fetch single user
     fetchUser(req, res) {
         const query = `
-        SELECT userID, firstName, lastName, userAdd
+        SELECT userID, firstName, lastName, userEmail,userAdd, userMobile
         FROM users
         WHERE userID = ?;
         `;
@@ -47,7 +47,7 @@ class Users{
         const {emailAdd, userPass} = req.body // pipeline
         // query
         const query = `
-        SELECT userID, firstName, lastName, userEmail,userPass, 
+        SELECT userID, firstName, lastName, userEmail,userPass, userRole,
         userAdd
         FROM users
         WHERE emailAdd = '${emailAdd}';

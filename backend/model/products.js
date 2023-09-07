@@ -38,7 +38,7 @@ class Products{
             }
         });
     }
-    //register
+    //add
     addProduct(req, res) {
         const data = req.body;
         const query = `
