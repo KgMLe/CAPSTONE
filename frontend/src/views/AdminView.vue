@@ -19,6 +19,7 @@ admin_panel_settings
       <th>User ID</th>
       <th>First Name</th>
       <th>Last Name</th>
+      <th>User Role</th>
       <th>Email</th>
       <th>Mobile No.</th>
       <th>Address</th>
@@ -28,6 +29,7 @@ admin_panel_settings
       <td>{{user.userID}}</td>
       <td>{{ user.firstName }}</td>
       <td>{{ user.lastName }}</td>
+      <td>{{ user.userRole }}</td>
       <td>{{ user.userEmail}}</td>
       <td>{{ user.userMobile}}</td>
       <td>{{ user.userAdd}}</td>
@@ -63,9 +65,55 @@ admin_panel_settings
       <td>{{ product.prodPrice }}</td>
       <td>{{ product.prodDesc }}</td>
       <td>{{ product.prodCat }}</td>
-      <td><button class="btn btn-outline-secondary">
+      <td><button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editProd">
         Update
       </button></td>
+      <!-- edit modal -->
+      <div class="modal fade" id="editProd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update Product</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- EDIT PRODUCT FORM -->
+      <div class="modal-body">
+    <form @submit.prevent="updatedProd" :key="product.prodID">   
+  <!-- Profile image  -->
+  <div class="mb-3">
+  <label for="prodImage" class="form-label">Image Url</label>
+  <input type="text" class="form-control" id="userImage" v-model="editProd.prodUrl">
+  </div>
+  <!-- name -->
+  <div class="mb-3">
+  <label for="prodName" class="form-label">Product Name</label>
+  <input type="text" class="form-control" id="prodName" v-model="editProd.prodName">
+  </div>
+  <!-- pride -->
+  <div class="mb-3">
+    <label for="amount" class="form-label">Amount</label>
+  <input type="number" class="form-control" id="amount" v-model="editProd.prodPrice">
+  </div>
+   <!-- Description  -->
+   <div class="mb-3">
+  <label for="quantity" class="form-label">Quantity</label>
+  <input type="text" class="form-control" id="prodDesc" v-model="editProd.prodDesc">
+  </div>
+    <!-- category -->
+    <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+  <input type="text" class="form-control" id="category" v-model="editProd.prodCat">
+  </div>
+  </form>
+      </div>
+      <div class="modal-footer">
+        <!-- for update the product -->
+        <button type="submit" class="btn btn-primary" @click="updateProd(prodID)">Save changes</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- DELETE PRODUCT -->
       <td><button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalConfirmDelete">
         Delete
       </button></td>
@@ -92,8 +140,8 @@ admin_panel_settings
     </div>
   </div>
 </div>
-
-    </tr>
+ </tr>
+ <!-- ADD PRODUCT BUTTON -->
     <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#addProductModal"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
 </svg>
@@ -204,25 +252,24 @@ components:{
       },
 
       editProd :{
-      prodID: "",
       prodName: "",
-      quantity: "",
-      amount: "",
-      Category: "",
+      prodCat: "",
+      prodPrice: "",
+      prodDesc: "",
       prodUrl: ""
       },
       // add admin
-      addUser:{
-       userID : "",
-       firstName: "",
-       lastName: "",
-       userAge: "",
-       Gender: "",
-       userRole: "",
-       emailAdd: "",
-       userPass: "",
-       userProfile: ""
-      }
+      // addUser:{
+      //  userID : "",
+      //  firstName: "",
+      //  lastName: "",
+      //  : "",
+      //  Gender: "",
+      //  userRole: "",
+      //  emailAdd: "",
+      //  userPass: "",
+      //  userProfile: ""
+      // }
     }
   },
 
@@ -238,6 +285,9 @@ components:{
    },
   orders(){
     return this.$store.orders
+  },
+  updatedProd(){
+    return this.$store.dispatch ('updateProduct', this.editProd)
   }
  },
 
@@ -253,6 +303,20 @@ components:{
   },
 
   // edit product
+  async updateProd(prodID) {
+    console.log("clicked");
+      try {
+        const response = await this.$store.dispatch('updateProduct', prodID);
+        
+        if (response.msg) {
+          alert("Oops something seems wrong")
+        } else {
+          alert("Prodcut Updated")
+        }
+      } catch (error) {
+        this.errorMsg = "An error occurred while updating the user."
+      }
+    },
 
   // delete product
   async delProd(prodID) {
@@ -297,6 +361,5 @@ background-color: bisque;
 table.striped-table th{
 background-color: #DDA15E;
 }
-
   
 </style>
