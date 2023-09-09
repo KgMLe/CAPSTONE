@@ -39,24 +39,25 @@
     </ul>
 </div>
   </div>
+
+  <!-- search products -->
+  <form class="d-flex" role="search">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" v-model="search">
+        <span class="btn" type="submit"><span class="material-symbols-outlined">search
+      </span></span>
+      </form>
   <!-- DISPLAY PRODUCTS -->
   <div class="container-fluid">
     <div class="products" v-if="products">
       <div class="row row-cols-1 row-cols-md-3 g-4" style="padding: 5%;">
-  <div class="col"  v-for="product in products" :key= "product.prodID">
+  <div class="col"  v-for="product in filteredPortfolios" :key= "product.prodID">
     <div class="card">
       <div class="card-body">
           <img :src="product.prodUrl" class="card-img-top" alt="...">
         <h5 class="card-title">{{ product.prodName }}</h5>
     <h6 class="card-subtitle mb-2 text-body-secondary">R{{ product.prodPrice }}</h6>
     <div class="button-contain">
-          <router-link :to="{ name: 'singleProd', params: { id: product.prodID }, query: {
-              prodName: product.prodName,
-              prodPrice: product.prodPrice,
-              prodURL: product.prodUrl,
-              prodCat: product.prodCat,
-              prodDesc: product.prodDesc,
-            }}"
+          <router-link :to="{ name: 'loginPage'}"
         >
         <button class="btn">
           View Details
@@ -83,10 +84,26 @@ export default {
        components:{
         SpinnerComp,
        },
+       data(){
+    return {
+  search:""
+};
+  },
       computed:{
         products(){
             return this.$store.state.products
         },
+        filteredPortfolios() {
+         // Convert searchQuery to lowercase for case-insensitive search
+    const search = this.search.toLowerCase();
+  return this.products.filter((products) => {
+  const prodName = products.prodName.toLowerCase(); //filter on accountname
+  return (
+    prodName.includes(search)
+  );
+});
+    },
+
        },
        methods:{
     // sort amount Low to High
@@ -109,7 +126,9 @@ export default {
        } 
      }
 
-
+   
+  
+  
 </script>
 
 <style scoped>

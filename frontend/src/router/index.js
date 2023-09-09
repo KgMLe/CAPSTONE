@@ -47,6 +47,12 @@ const routes = [
     component: () => import ( '../components/SingleProd.vue')
   },
   // include paths for the categories
+
+  {
+    path: "/login",
+    name: "loginPage", 
+    component: () => import ( '../components/LogIn.vue')
+  },
 ]
 
 const router = createRouter({

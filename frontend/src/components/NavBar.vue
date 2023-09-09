@@ -31,7 +31,7 @@ local_mall
      </router-link>
             </ul>
       <form class="d-flex" role="search">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" v-model="search">
         <span class="btn" type="submit"><span class="material-symbols-outlined">search
       </span></span>
       </form>
@@ -66,6 +66,15 @@ local_mall
 </template>
 
 <script>
+export default{
+  components:{
+
+  },
+
+
+
+
+}
 </script>
 
 <style>

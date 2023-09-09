@@ -234,7 +234,7 @@ export default createStore({
           }
         },
         // addUser
-        async register(context, payload) {
+        async addUser(context, payload) {
           try {
             const response = await axios.post(`${anchored}register`, payload);
             const { msg, user } = response.data;
