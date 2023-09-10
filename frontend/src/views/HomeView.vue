@@ -1,7 +1,7 @@
 <template>
  <div class="container-fluid">
   <div class="row">
-    <div class="col">
+    <div class="col" style="padding: 10%;">
       <h1 id="landingtext">Style that Inspires, Faith that Ignites.</h1>
       <br>
       <p>
@@ -17,12 +17,12 @@
     </div>
   </div>
   <div class="row text-center" style="padding: 5%;">
-    <!-- <h1>Shop by Category</h1> -->
+    <!-- <h1>SOur Product Offerings</h1> -->
     <router-link to="/"></router-link>
-    <div class="col" id="one" style="padding: 2%;"><router-link to="/">Hoodies</router-link></div>
-    <div class="col" id="two" style="padding: 2%;"><router-link to="/">Graphic Tees</router-link></div>
-    <div class="col" id="three" style="padding: 2%;"><router-link to="/"> Headwear </router-link></div>
-    <div class="col" id="four" style="padding: 2%;"><router-link to="/products">All Products</router-link></div>
+    <div class="col" id="one" style="padding: 2%;">Hoodies</div>
+    <div class="col" id="two" style="padding: 2%;">Graphic Tees</div>
+    <div class="col" id="three" style="padding: 2%;">Headwear</div>
+    <div class="col" id="four" style="padding: 2%;"><router-link to="/products">Shop Now</router-link></div>
   </div>
 
   </div>
@@ -78,7 +78,7 @@ font-weight: bold;
 }
 
 #three{
-background-image: url("https://nhimapparel.com/cdn/shop/products/DSC02626.jpg?v=1687219701&width=950");
+background-image: url("https://anchored-music.com/cdn/shop/files/AM_HEADWEAR_ce4c3652-2759-419a-a8d5-2fd122aea6e9.webp?v=1689801966&width=1000");
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;

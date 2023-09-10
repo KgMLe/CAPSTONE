@@ -43,8 +43,6 @@
   <!-- search products -->
   <form class="d-flex" role="search">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search" v-model="search">
-        <span class="btn" type="submit"><span class="material-symbols-outlined">search
-      </span></span>
       </form>
   <!-- DISPLAY PRODUCTS -->
   <div class="container-fluid">
@@ -133,7 +131,7 @@ export default {
 
 <style scoped>
 #shoppinglanding{
-background-image: url("https://i.postimg.cc/B65Kdt4c/Banner2.jpg");
+background-image: url("https://sacrize.com/cdn/shop/files/2775-1240-for-desktop-Transfiguration_2000x.jpg?v=1616039116");
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -158,8 +156,20 @@ text-align: justify;
   /* margin: 5px; */
   /* border: 1px solid black; */
 }
- /* img{
-  width: 300px;
- } */
- 
+ .btn{
+ color: #fff;
+  font-weight: normal;
+  font-size: 22px;
+  background: #BC6C25;
+  border-radius: 50px;
+  padding: 5px 20px;
+  border: none;
+  transition: .5s ease;
+  box-shadow: 0 15px 60px -5px rgba(82, 82, 82, 0.5);
+}
+
+.btn:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
 </style>

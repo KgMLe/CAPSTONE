@@ -61,8 +61,28 @@ local_mall
     </div>
   </div>
 </nav>
+<nav class="navbar">
+        <div class="container">
+          
+            <div class="logo">
+              <router-link to="/">
+<img src="https://i.postimg.cc/prwPd5L6/blacklogo-removebg-preview.png" alt="logo">
+     </router-link>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  </div>
+</div>
 </template>
 
 <script>
@@ -80,7 +100,7 @@ export default{
 <style>
 
 .nav-bar{
-  background-color: black;
+  background-color: black !important;
   padding: 50%;
 }
 .nav-item{
@@ -102,6 +122,79 @@ input{
 img[alt= "logo"]{
     width: 15rem;
     padding-right: 5px !important;
+}
+
+/* Reset some default styles for better consistency */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: black;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.logo {
+    text-align: center !important;  /* Center the logo */
+}
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 50px  #BC6C25;
+}
+
+.nav-links {
+    margin-top: 20px;
+    flex: 1; /* Take remaining horizontal space */
+    display: flex;
+    justify-content: center; /* Center the links on smaller screens */
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color:  #BC6C25;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .search-bar {
+        margin-top: 20px;
+        flex-basis: 100%; /* Take full width on smaller screens */
+        justify-content: center; /* Center the search bar */
+    }
 }
 
 </style>
