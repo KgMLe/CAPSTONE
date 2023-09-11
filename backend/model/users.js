@@ -44,7 +44,7 @@ class Users{
     //______________________________________________________________________
     //login a user
     login(req, res) {
-        const {emailAdd, userPass} = req.body // pipeline
+        const {userEmail, userPass} = req.body // pipeline
         // query
         const query = `
         SELECT userID, firstName, lastName, userEmail,userPass, userRole,
