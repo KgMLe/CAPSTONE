@@ -17,27 +17,28 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form @submit.prevent="login">
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email address</label>
                                     <div class="input-group pb-modalreglog-input-group">
-                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                        <input type="email" class="form-control" id="email" placeholder="Email" v-model="userLogin.userEmail" required>
                                         <span class="input-group-text"><span class="glyphicon glyphicon-user"></span></span>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password</label>
                                     <div class="input-group pb-modalreglog-input-group">
-                                        <input type="password" class="form-control" id="pws" placeholder="Password">
+                                        <input type="password" class="form-control" id="password" placeholder="Password" required v-model="userLogin.userPass">
                                         <span class="input-group-text"><span class="glyphicon glyphicon-lock"></span></span>
                                     </div>
                                 </div>
+                                <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Log in</button>
+                        </div>
                             </form>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Log in</button>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -107,7 +108,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" @click="newUser(addUser)">Sign up</button>
+                            <button type="submit" class="btn btn-primary"   >Sign up</button>
                         </div>
                     </div>
                 </div>
@@ -131,11 +132,19 @@ export default{
        userRole: "user",
        userAdd: "",
        userMobile: ""
+      },
+
+      userLogin:{
+       userEmail: "",
+       userPass: ""
       }
     }
   },
 
   computed:{
+    user() {
+      return this.$store.state.user;
+    },
   },
 
   mounted(){
@@ -147,7 +156,13 @@ export default{
     this.$store.dispatch('addUser', this.addUser)
    },
 
+   login() {
+      this.$store.dispatch("login", this.userLogin);
+  },
+  beforeCreate() {
+    this.$store.dispatch("fetchUsers");
   }
+}
 }
 </script>
 
