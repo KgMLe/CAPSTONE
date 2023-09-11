@@ -1,8 +1,7 @@
 <template>
   <div>
-    <!-- Add a video of apparel vibes -->
     <div><img src="https://i.postimg.cc/RFVw1677/OUR-STORY-1.png" alt="brandowners" loading="lazy"></div>
-    <div class="container text-center">
+    <div class="container text-center" style="padding-top: 5%;">
       <p>
         At Anchored Life, we believe that faith isn't just something you carry in your heart; it's a message you can wear proudly. Our journey began with a simple yet profound idea: to create a space where faith and fashion converge seamlessly.We understand that what you wear is an extension of who you are, and it can reflect your values, beliefs, and the things that matter most to you. This belief sparked the creation of our brand.
         <br>
@@ -17,7 +16,7 @@
       </p>
     </div>
     <br>
-    <div class="container text-center" style="padding-top:3% ;">
+    <div class="container text-center">
   <div class="row">
     <h1> Read Our Latest Blog Posts Here </h1>
     <div class="col text-center" id="blogpost" style="padding: 3%;">
@@ -27,25 +26,25 @@
     <p>Cross T shirts and Their Designs</p>
     </div>
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col text-center" id="blogpost" style="padding: 3%;">
     <p> The Most Important Article <br> We Will Ever Write.</p>
     </div>
     <div class="col text-center" id="blog" style="padding: 3%">
     <p>Cross T shirts and Their Designs</p>
     </div>
+  </div> -->
   </div>
-  </div>
-  <div class="container text-center">
-  <div class="row" style="padding: 3%;">
-    <div class="col radius" ><h3><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+  <div style="padding: 5%;">
+  <div class="row">
+    <div class="col radius" ><h3><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#BC6C25" class="bi bi-cart2" viewBox="0 0 16 16">
   <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
 </svg>FREE SHIPPING</h3><p>Free shipping on all orders over R1000</p></div>
-    <div class="col radius"><h3> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+    <div class="col radius"><h3> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#BC6C25" class="bi bi-credit-card" viewBox="0 0 16 16">
   <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
   <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
 </svg> SECURE PAYMENT</h3><p>We offer safe shopping guaranteed</p></div>
-    <div class="col radius"><h3><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
+    <div class="col radius"><h3><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#BC6C25" class="bi bi-wallet2" viewBox="0 0 16 16">
   <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
 </svg>100% SATISFACTION</h3><p>Free returns and exchanges within 7 days</p></div>
   </div>
@@ -80,9 +79,8 @@ p{
 img[alt= "brandowners"]{
     width: 100%;
 }
-/* 
-.radius{
+
+/* .radius{
   border: solid 1px;
-  border-radius: 50%;
 } */
 </style>
