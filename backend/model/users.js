@@ -50,7 +50,7 @@ class Users{
         SELECT userID, firstName, lastName, userEmail,userPass, userRole,
         userAdd
         FROM users
-        WHERE emailAdd = '${emailAdd}';
+        WHERE userEmail = '${userEmail}';
         `
         db.query(query, async (err, result)=>{
             if(err) throw err
@@ -67,7 +67,7 @@ class Users{
                         // Create a token
                         const token =
                         createToken({
-                            emailAdd,
+                            userEmail,
                             userPass
                         })
                     
