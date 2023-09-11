@@ -39,24 +39,23 @@
     </ul>
 </div>
   </div>
+
+  <!-- search products -->
+  <form class="d-flex" role="search">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" v-model="search">
+      </form>
   <!-- DISPLAY PRODUCTS -->
   <div class="container-fluid">
     <div class="products" v-if="products">
       <div class="row row-cols-1 row-cols-md-3 g-4" style="padding: 5%;">
-  <div class="col"  v-for="product in products" :key= "product.prodID">
+  <div class="col"  v-for="product in filteredPortfolios" :key= "product.prodID">
     <div class="card">
       <div class="card-body">
           <img :src="product.prodUrl" class="card-img-top" alt="...">
         <h5 class="card-title">{{ product.prodName }}</h5>
     <h6 class="card-subtitle mb-2 text-body-secondary">R{{ product.prodPrice }}</h6>
     <div class="button-contain">
-          <router-link :to="{ name: 'singleProd', params: { id: product.prodID }, query: {
-              prodName: product.prodName,
-              prodPrice: product.prodPrice,
-              prodURL: product.prodUrl,
-              prodCat: product.prodCat,
-              prodDesc: product.prodDesc,
-            }}"
+          <router-link :to="{ name: 'loginPage'}"
         >
         <button class="btn">
           View Details
@@ -83,10 +82,26 @@ export default {
        components:{
         SpinnerComp,
        },
+       data(){
+    return {
+  search:""
+};
+  },
       computed:{
         products(){
             return this.$store.state.products
         },
+        filteredPortfolios() {
+         // Convert searchQuery to lowercase for case-insensitive search
+    const search = this.search.toLowerCase();
+  return this.products.filter((products) => {
+  const prodName = products.prodName.toLowerCase(); //filter on accountname
+  return (
+    prodName.includes(search)
+  );
+});
+    },
+
        },
        methods:{
     // sort amount Low to High
@@ -109,12 +124,14 @@ export default {
        } 
      }
 
-
+   
+  
+  
 </script>
 
 <style scoped>
 #shoppinglanding{
-background-image: url("https://i.postimg.cc/B65Kdt4c/Banner2.jpg");
+background-image: url("https://sacrize.com/cdn/shop/files/2775-1240-for-desktop-Transfiguration_2000x.jpg?v=1616039116");
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -139,8 +156,20 @@ text-align: justify;
   /* margin: 5px; */
   /* border: 1px solid black; */
 }
- /* img{
-  width: 300px;
- } */
- 
+ .btn{
+ color: #fff;
+  font-weight: normal;
+  font-size: 22px;
+  background: #BC6C25;
+  border-radius: 50px;
+  padding: 5px 20px;
+  border: none;
+  transition: .5s ease;
+  box-shadow: 0 15px 60px -5px rgba(82, 82, 82, 0.5);
+}
+
+.btn:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
 </style>
