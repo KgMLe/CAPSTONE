@@ -108,7 +108,7 @@ admin_panel_settings
       </div>
       <div class="modal-footer">
         <!-- for update the product -->
-        <button type="submit" class="btn btn-primary" @click="updateProd(prodID)">Save changes</button>
+        <button type="updatedProd" class="btn btn-primary" @click="updateProd(prodID)">Save changes</button>
       </div>
     </div>
   </div>

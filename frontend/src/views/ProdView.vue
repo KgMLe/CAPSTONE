@@ -55,7 +55,14 @@
         <h5 class="card-title">{{ product.prodName }}</h5>
     <h6 class="card-subtitle mb-2 text-body-secondary">R{{ product.prodPrice }}</h6>
     <div class="button-contain">
-          <router-link :to="{ name: 'loginPage'}"
+          <router-link :to="{ name: 'singleProd', params: { id: product.prodID }, query: {
+              prodName: product.prodName,
+              prodPrice: product.prodPrice,
+              prodURL: product.prodUrl,
+              prodCat: product.prodCat,
+              prodDesc: product.prodDesc,
+            }
+          }"
         >
         <button class="btn">
           View Details
