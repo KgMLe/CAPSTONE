@@ -61,7 +61,7 @@ local_mall
     </div>
   </div>
 </nav>
-<nav class="navbar">
+<!-- <nav class="navbar">
         <div class="container">
           
             <div class="logo">
@@ -80,7 +80,7 @@ local_mall
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
-    </nav>
+    </nav> -->
 
 </div>
 </template>

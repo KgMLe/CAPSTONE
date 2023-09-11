@@ -27,6 +27,12 @@
   
   
   <script>
+// add to cart
+export default{
+  methods:{
+
+}
+}
 
   </script>
   <style scoped>

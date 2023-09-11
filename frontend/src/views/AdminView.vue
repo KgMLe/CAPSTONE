@@ -65,7 +65,7 @@ admin_panel_settings
       <td>{{ product.prodPrice }}</td>
       <td>{{ product.prodDesc }}</td>
       <td>{{ product.prodCat }}</td>
-      <td><button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#editProd">
+      <td><button  data-bs-toggle="modal" data-bs-target="#editProd">
         Update
       </button></td>
       <!-- edit modal -->
@@ -114,7 +114,7 @@ admin_panel_settings
   </div>
   </div>
   <!-- DELETE PRODUCT -->
-      <td><button class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modalConfirmDelete">
+      <td><button  data-bs-toggle="modal" data-bs-target="#modalConfirmDelete">
         Delete
       </button></td>
 <!-- Modal: modalConfirmDelete -->
@@ -258,17 +258,15 @@ components:{
       prodDesc: "",
       prodUrl: ""
       },
+
       // add admin
       // addUser:{
       //  userID : "",
       //  firstName: "",
       //  lastName: "",
-      //  : "",
-      //  Gender: "",
-      //  userRole: "",
+      //  userRole: "Admin",
       //  emailAdd: "",
       //  userPass: "",
-      //  userProfile: ""
       // }
     }
   },
@@ -333,9 +331,8 @@ components:{
  mounted(){
 this.$store.dispatch('fetchUsers'),
 this.$store.dispatch('fetchProducts'),
-this.$store.dispatch('fetchOrders')
-
-  
+this.$store.dispatch('fetchOrders'),
+this.$store.dispatch('updateProduct')
 } 
 }       
 </script>

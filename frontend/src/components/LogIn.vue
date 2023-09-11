@@ -72,7 +72,7 @@
                                     <label for="inputEmail" class="form-label">Email address</label>
                                     <div class="input-group pb-modalreglog-input-group">
                                         <span class="input-group-text"><span class="glyphicon glyphicon-user"></span></span>
-                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" v-model="addUser.emailAdd">
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" v-model="addUser.userEmail">
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -107,7 +107,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" @click="registerUser(addUser)">Sign up</button>
+                            <button type="submit" class="btn btn-primary" @click="newUser(addUser)">Sign up</button>
                         </div>
                     </div>
                 </div>
@@ -126,9 +126,9 @@ export default{
       addUser:{
        firstName: "",
        lastName: "",
-       emailAdd: "",
+       userEmail: "",
        userPass: "",
-       userRole: "",
+       userRole: "user",
        userAdd: "",
        userMobile: ""
       }
@@ -136,9 +136,6 @@ export default{
   },
 
   computed:{
-    newUser(){
-    return this.$store.dispatch('addUser', this.addUser)
-   },
   },
 
   mounted(){
@@ -146,14 +143,10 @@ export default{
   },
 
   methods: {
-    async registerUser() {
-    try {
-      await this.$store.dispatch('addUser',this.addUser);
-      alert("User Added")
-    } catch (error) {
-      this.errorMsg = "An error occurred."
-    }
-  },
+    newUser(){
+    this.$store.dispatch('addUser', this.addUser)
+   },
+
   }
 }
 </script>
