@@ -1,34 +1,62 @@
 <template>
   <div class="container-fluid">
-    <div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-              <img class="rounded-circle mt-5" width="150px" src="https://i.postimg.cc/fRD3CqrR/user-icon-150670-removebg-preview.png">
-              <span class="font-weight-bold">user.firstName</span>
-              <span class="text-black-50">user.userEmail</span><span> </span>
-            </div>
-        </div>
-        <div class="col-md-5 border-right">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h1 class="text-right">My Profile</h1>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
-                    <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="Phone number" value=""></div>
-                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
-                    <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="123 Main St,Wynberg, Cape Town" value=""></div>
-                </div>
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Update Profile</button> <button class="btn btn-primary profile-button" type="button">Delete Profile</button>
-                    <br>
-                    
-                </div>
-            </div>
-        </div>
+
+    <div class="row" :user = "user">
+        <div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+<div class="col-xl-6 col-md-12">
+     <div class="card user-card-full">
+      <div class="row m-l-0 m-r-0">
+       <div class="col-sm-4 bg-c-lite-green user-profile">
+         <div class="card-block text-center text-white">
+          <div class="m-b-25"><img src="https://us.123rf.com/450wm/tifani1/tifani11801/tifani1180100032/93016694-user-icon-vector-illustration-on-black-background.jpg?ver=6" class="img-radius" alt="User-Profile-Image">
+          </div>
+          <h6>{{user.firstName}} {{ user.lastName }}</h6>
+        <button>Edit</button> <br>
+        <button>Delete</button>
+          </div>
+           </div>
+            <div class="col-sm-8">
+              <div class="card-block">
+                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Your Details</h6>
+                <div class="row">
+                    <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">First Name</p>
+                     <h6 class="text-muted f-w-400">{{user.firstName}}</h6>
+                    </div>
+                    <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Last Name</p>
+                    <h6 class="text-muted f-w-400">{{user.lastName}}</h6>
+                    </div>
+                    </div>
+                   <div class="row">
+                    <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Email</p>
+                     <h6 class="text-muted f-w-400">{{user.userEmail}}</h6>
+                    </div>
+                    <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Mobile Number</p>
+                    <h6 class="text-muted f-w-400">{{user.Mobile}}</h6>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Address</p>
+                     <h6 class="text-muted f-w-400">{{user.userAdd}}</h6>
+                    </div>
+                    <div class="col-sm-6">
+                    <p class="m-b-10 f-w-600">Mobile Number</p>
+                    <h6 class="text-muted f-w-400">{{user.userMobile}}</h6>
+                    </div>
+                    </div>
+              </div>
+          </div>
+      </div>
+       </div>
+       </div>
+      </div>
+      </div>
     </div>
 </div>
 <div class="container-fluid">
@@ -58,33 +86,155 @@
 </template>
 
 <script>
+import { useCookies } from "vue3-cookies";
+const { cookies } = useCookies();
+export default {
+       computed: {
+        user() {
+          return this.$store.state.user || cookies.get('user').result;
+      },
+    },
+    }
 </script>
 
 <style scoped>
 /* user profile styling */
-.form-control:focus {
-    box-shadow: none;
-    border-color:#BC6C25;
+
+.padding {
+    padding: 3rem !important
 }
-.profile-button {
-    background: #BC6C25;
-    box-shadow: none;
-    border: none
+
+.user-card-full {
+    overflow: hidden;
+    width: 100%;
 }
-.profile-button:hover {
-    background: #BC6C25;
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+    box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+    border: none;
+    margin-bottom: 30px;
 }
-.profile-button:focus {
-    background: #BC6C25;
-    box-shadow: none
+
+.m-r-0 {
+    margin-right: 0px;
 }
-.profile-button:active {
-    background: #BC6C25;
-    box-shadow: none
+
+.m-l-0 {
+    margin-left: 0px;
 }
-.labels {
-    font-size: 11px
+
+.user-card-full .user-profile {
+    border-radius: 5px 0 0 5px;
 }
+
+.bg-c-lite-green {
+        background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#040404));
+    background: linear-gradient(to right, #000000, #f29263);
+}
+
+.user-profile {
+    padding: 20px 0;
+}
+
+.card-block {
+    padding: 1.25rem;
+}
+
+.m-b-25 {
+    margin-bottom: 25px;
+}
+
+.img-radius {
+    border-radius: 5px;
+    width: 5rem;
+}
+
+
+ 
+h6 {
+    font-size: 14px;
+}
+
+.card .card-block p {
+    line-height: 25px;
+}
+
+@media only screen and (min-width: 1400px){
+p {
+    font-size: 14px;
+}
+}
+
+.card-block {
+    padding: 1.25rem;
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important;
+}
+
+.card .card-block p {
+    line-height: 25px;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.text-muted {
+    color: #919aa3 !important;
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.f-w-600 {
+    font-weight: 600;
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+}
+
+.m-t-40 {
+    margin-top: 20px;
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.m-t-40 {
+    margin-top: 20px;
+}
+
+.user-card-full {
+    display: inline-block;
+}
+
+.user-card-full {
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+
 
 /* orders table styling  */
 
@@ -169,6 +319,8 @@ table th {
   table td:last-child {
     border-bottom: 0;
   }
+
+
 }
 
 

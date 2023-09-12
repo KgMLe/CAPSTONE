@@ -1,7 +1,9 @@
 <template>
   <div>
-  <div class="container">
-  <div class="row" style="padding-top: 3%;">
+  <div class="container-fluid">
+  <div class="container" style="padding-top: 3%;">
+
+
     <div class="col-4"><img :src="$route.query.prodURL" class="card-img-top" :alt="$route.query.prodName"/>
     </div>
     <div class="col-6"> <h5>{{$route.query.prodName}}</h5>
