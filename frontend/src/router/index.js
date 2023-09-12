@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useCookies } from "vue3-cookies";
+const {cookies} = useCookies();
 // import HomeView from '../views/HomeView.vue'
 
 const routes = [
@@ -44,14 +46,24 @@ const routes = [
   {
     path: "/product/:id",
     name: "singleProd", 
-    component: () => import ( '../components/SingleProd.vue')
+    component: () => import ( '../components/SingleProd.vue'),
+    beforeEnter(){
+      if (!cookies.get('user')) {
+        router.push('/login')
+      }
+    }
   },
   // include paths for the categories
 
   {
     path: "/login",
     name: "loginPage", 
-    component: () => import ( '../components/LogIn.vue')
+    component: () => import ( '../components/LogIn.vue'),
+    // afterEnter(){
+    //     if(cookies.get('user')){
+    //       router.push ('/product/:id')
+    //     }
+    // }
   },
 ]
 

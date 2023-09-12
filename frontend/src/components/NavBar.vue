@@ -52,16 +52,14 @@ local_mall
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                       <router-link class="dropdown-item" to="/profile">Login/SignUp User</router-link>
                       <router-link class="dropdown-item" to="/admin">Login Admin</router-link>
+                      <!-- <router-link class="dropdown-item" >Logout</router-link> -->
                     </ul>
                 </li>
-        <!-- <li class="nav-item me-3 me-lg-1"
-          add a logout button here for when admin or user is logged in
-       </li> -->
      </ul>
     </div>
   </div>
 </nav>
-<nav class="navbar">
+<!-- <nav class="navbar">
         <div class="container">
           
             <div class="logo">
@@ -80,7 +78,7 @@ local_mall
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
-    </nav>
+    </nav> -->
 
 </div>
 </template>

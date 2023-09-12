@@ -1,5 +1,10 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+import sweet from "sweetalert";
+import router from "@/router";
+import { useCookies } from "vue3-cookies";
+import authenticateUser from '@/services/authenticateUser';
+const { cookies } = useCookies();
 const anchored = "https://anchored.onrender.com/"
 
 
@@ -233,33 +238,75 @@ export default createStore({
             context.commit("setMsg", "An error occurred while deleting the user");
           }
         },
-        // addUser
+        // addUser or register
         async addUser(context, payload) {
           try {
-            const response = await axios.post(`${anchored}register`, payload);
-            const { msg, user } = response.data;
-      
-            if (msg) {
-              context.commit("setMsg", msg);
-            } else {
-              context.commit("newUser", user); // Update the users array in the state
-              context.commit("setMsg", "User added successfully");
-            }
-          } catch (e) {
-            context.commit("setMsg", "An error occurred while adding the user");
-          }
+            const {msg} = (await axios.post(`${anchored}user/new`, payload)).data;
+            //post request
+        if (msg) { //if payload posted give us a sweet message
+          sweet({
+            title: "Registration",
+            text: msg,
+            icon: "success",
+            timer: 4000,
+          });
+          context.dispatch("fetchUsers");
+          router.push({ name: "login" });
+        } else { //if not posted then give us this sweet error
+          sweet({
+            title: "Error",
+            text: msg,
+            icon: "error",
+            timer: 4000
+          });
+        }
+      } catch (e) {
+        context.commit("setMsg", "An error has occured");
+      }
         },
-      // cart stuff
-      // add to cart
-      addToCart({ commit, state }, item) {
-        const existingItemIndex = state.cartItems.findIndex(cartItem => cartItem.id === item.id);
-    
-        if (existingItemIndex !== -1) {
-          // Handle item already in the cart (e.g., increment quantity)
-        } else {
-          commit('addToCart', item);
+
+      // login
+      async login(context, payload) {
+        try {
+          const { msg, token, result } = (
+            await axios.post(`${anchored}login`, payload) //login request`
+          ).data;
+          // console.log( msg, token, result);
+          if (result) {
+            context.commit("setUser", { result, msg });
+            cookies.set("user", { msg, token, result });
+            authenticateUser.applyToken(token);
+            sweet({
+              title: msg,
+              text: `Welcome back ${result?.FirstName} ${result?.LastName}`,
+              icon: "success",
+              timer: 4000,
+            });
+            router.push({ name: "SingleProd" }); //page i want to go after
+          } else {
+            sweet({
+              title: "Error",
+              text: msg,
+              icon: "error",
+              timer: 4000,
+            });
+          }
+        } catch (e) {
+          context.commit("setMsg", "An error has occured");
         }
       },
+
+      // cart stuff
+      // add to cart
+      // addToCart({ commit, state }, product) {
+      //   const existingItemIndex = state.cartItems.findIndex(cartItem => cartItem.id === product.id);
+    
+      //   if (existingItemIndex !== -1) {
+      //     // Handle item already in the cart (e.g., increment quantity)
+      //   } else {
+      //     commit('addToCart', item);
+      //   }
+      // },
       // remove from cart
       removeFromCart({ commit }, index) {
         commit('removeFromCart', index);

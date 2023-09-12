@@ -1,7 +1,7 @@
 <template>
  <div class="container-fluid">
   <div class="row">
-    <div class="col" style="padding: 10%;">
+    <div class="col" style="padding: 7%;">
       <h1 id="landingtext">Style that Inspires, Faith that Ignites.</h1>
       <br>
       <p>

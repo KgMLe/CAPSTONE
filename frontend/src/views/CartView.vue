@@ -77,7 +77,7 @@
                                     </div>
                                     <div class="row mb-md-5">
                                         <div class="col">
-                                            <button type="button" name="" id="" class="btn">Confirm</button>
+                                            <button type="button" name="" id="" class="btn">Checkout</button>
                                         </div>
                                     </div>
                                 </div>
