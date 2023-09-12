@@ -105,9 +105,14 @@ export default {
   const prodName = products.prodName.toLowerCase(); //filter on accountname
   return (
     prodName.includes(search)
-  );
+  )
 });
     },
+
+      // filterCategory
+  // selectedCardio(){
+  //     return this.$store.state.products.find(products => products.Category ==='cardio');
+  //   } 
 
        },
        methods:{
