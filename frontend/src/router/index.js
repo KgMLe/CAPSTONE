@@ -59,11 +59,11 @@ const routes = [
     path: "/login",
     name: "loginPage", 
     component: () => import ( '../components/LogIn.vue'),
-    afterEnter(){
-        if(cookies.get('user')){
-          router.push ('/product/:id')
-        }
-    }
+    // afterEnter(){
+    //     if(cookies.get('user')){
+    //       router.push ('/product/:id')
+    //     }
+    // }
   },
 ]
 
