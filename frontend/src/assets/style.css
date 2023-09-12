@@ -7,7 +7,6 @@ button{
   padding: 5px 20px;
   border: none;
   transition: .5s ease;
-  box-shadow: 0 15px 60px -5px rgba(82, 82, 82, 0.5);
 }
 
 button:hover {
@@ -24,7 +23,6 @@ button:hover {
    padding: 8px 20px;
    border: none;
    transition: .5s ease;
-   box-shadow: 0 15px 60px -5px rgba(82, 82, 82, 0.5);
  }
  
  .btn:hover {

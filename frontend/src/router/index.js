@@ -58,7 +58,12 @@ const routes = [
   {
     path: "/login",
     name: "loginPage", 
-    component: () => import ( '../components/LogIn.vue')
+    component: () => import ( '../components/LogIn.vue'),
+    afterEnter(){
+        if(cookies.get('user')){
+          router.push ('/product/:id')
+        }
+    }
   },
 ]
 

@@ -172,11 +172,9 @@ text-align: justify;
   padding: 5px 20px;
   border: none;
   transition: .5s ease;
-  box-shadow: 0 15px 60px -5px rgba(82, 82, 82, 0.5);
 }
 
 .btn:hover {
-  box-shadow: none;
   cursor: pointer;
 }
 </style>
