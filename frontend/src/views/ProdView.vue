@@ -21,7 +21,7 @@
 <br>
   <div id="options" style="padding: 3%;">
     <div class="d-grid gap-2 col-6 mx-auto" role="group">
-  <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" type="button">Filter By</button>
+  <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" type="button">Sort By</button>
   <ul class="dropdown-menu">
       <li><a class="dropdown-item" @click="sortAmount">Price (Low to High)</a></li>
       <li><a class="dropdown-item" href="#">Price (High to Low)</a></li>
