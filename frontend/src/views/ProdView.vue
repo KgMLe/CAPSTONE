@@ -48,7 +48,7 @@
   <div class="container-fluid">
     <div class="products" v-if="products">
       <div class="row row-cols-1 row-cols-md-3 g-4" style="padding: 5%;">
-  <div class="col"  v-for="product in filteredPortfolios" :key= "product.prodID">
+  <div class="col"  v-for="product in filteredProducts" :key= "product.prodID">
     <div class="card">
       <div class="card-body">
           <img :src="product.prodUrl" class="card-img-top" alt="...">
@@ -98,7 +98,7 @@ export default {
         products(){
             return this.$store.state.products
         },
-        filteredPortfolios() {
+        filteredProducts() {
          // Convert searchQuery to lowercase for case-insensitive search
     const search = this.search.toLowerCase();
   return this.products.filter((products) => {
@@ -114,7 +114,7 @@ export default {
     // sort amount Low to High
     sortAmount() {
       return this.$store.state.products.sort(
-    (p2, p1) => (p2.prodPrice < p1.prodPrice) ? -1 : (p2.amount > p1.prodPrice) ? 1 : 0);
+    (p2, p1) => (p2.prodPrice < p1.prodPrice) ? -1 : (p2.prodPrice > p1.prodPrice) ? 1 : 0);
      
       },
     // sort by name A-Z
@@ -172,11 +172,9 @@ text-align: justify;
   padding: 5px 20px;
   border: none;
   transition: .5s ease;
-  box-shadow: 0 15px 60px -5px rgba(82, 82, 82, 0.5);
 }
 
 .btn:hover {
-  box-shadow: none;
   cursor: pointer;
 }
 </style>

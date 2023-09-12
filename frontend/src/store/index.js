@@ -298,15 +298,15 @@ export default createStore({
 
       // cart stuff
       // add to cart
-      addToCart({ commit, state }, item) {
-        const existingItemIndex = state.cartItems.findIndex(cartItem => cartItem.id === item.id);
+      // addToCart({ commit, state }, product) {
+      //   const existingItemIndex = state.cartItems.findIndex(cartItem => cartItem.id === product.id);
     
-        if (existingItemIndex !== -1) {
-          // Handle item already in the cart (e.g., increment quantity)
-        } else {
-          commit('addToCart', item);
-        }
-      },
+      //   if (existingItemIndex !== -1) {
+      //     // Handle item already in the cart (e.g., increment quantity)
+      //   } else {
+      //     commit('addToCart', item);
+      //   }
+      // },
       // remove from cart
       removeFromCart({ commit }, index) {
         commit('removeFromCart', index);
