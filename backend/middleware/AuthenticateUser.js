@@ -6,7 +6,7 @@ function createToken(user){
         emailAdd: user.userEmail,
         userPass: user.userPass
     },process.env.SECRET_KEY, {
-        expiresIn: '45'
+        expiresIn: '1h'
     })
 }
 function verifyAToken(req, res, next){

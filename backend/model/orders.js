@@ -52,7 +52,7 @@ addOrder(req, res) {
     const data = req.body;
     const query = `
     insert into orders (userID, prodID)
-    values ?;
+    set ?;
     `;
 
     db.query(query, [data], (err) => {
