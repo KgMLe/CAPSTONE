@@ -13,8 +13,79 @@
           <div class="m-b-25"><img src="https://us.123rf.com/450wm/tifani1/tifani11801/tifani1180100032/93016694-user-icon-vector-illustration-on-black-background.jpg?ver=6" class="img-radius" alt="User-Profile-Image">
           </div>
           <h6>{{user.firstName}} {{ user.lastName }}</h6>
-        <button>Edit</button> <br>
-        <button>Delete</button>
+
+          <!-- edit button -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullHeightModalRight">
+          Edit
+</button> <br>
+
+<!-- Full Height Modal Right -->
+<div class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+  <div class="modal-dialog modal-dialog-right" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">Update Your Details</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="pb-modalreglog-form-reg" form @submit.prevent="updatedUser">
+            <div class="mb-3">
+              <div id="pb-modalreglog-progressbar"></div>
+                </div>
+                  <div class="mb-3">
+                   <label for="inputEmail" class="form-label">Firstname</label>
+                        <div class="input-group pb-modalreglog-input-group">
+                           <span class="input-group-text"><span class="glyphicon glyphicon-user"></span></span>
+                            <input type="email" class="form-control" id="firstName" placeholder="Firstname" v-model="editUser.firstName">
+                         </div>
+                         </div>
+                                <div class="mb-3">
+                                    <label for="inputEmail" class="form-label">Lastname</label>
+                                    <div class="input-group pb-modalreglog-input-group">
+                                        <span class="input-group-text"><span class="glyphicon glyphicon-user"></span></span>
+                                        <input type="email" class="form-control" id="lastName" placeholder="Lastname"  v-model="editUser.lastName">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputEmail" class="form-label">Email address</label>
+                                    <div class="input-group pb-modalreglog-input-group">
+                                        <span class="input-group-text"><span class="glyphicon glyphicon-user"></span></span>
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" v-model="editUser.userEmail">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="countries" class="form-label">User Role</label>
+                                    <div class="input-group pb-modalreglog-input-group">
+                                        <span class="input-group-text"><span class="glyphicon glyphicon-globe"></span></span>
+                                        <input type="text" class="form-control" id="userRole" placeholder="user" v-model="editUser.userRole">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="age" class="form-label">Address</label>
+                                    <div class="input-group pb-modalreglog-input-group">
+                                        <input id="userAdd" class="form-control" 
+                                        placeholder="12 Street, Wynberg, WC" v-model="editUser.userAdd">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputEmail" class="form-label">Mobile Number</label>
+                                    <div class="input-group pb-modalreglog-input-group">
+                                        <span class="input-group-text"><span class="glyphicon glyphicon-user"></span></span>
+                                        <input type="mobile" class="form-control" id="userMobile" placeholder="+234567890" v-model="editUser.userMobile">
+                                    </div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" @click="updateUser(updatedUser)">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- DELETE THE USER PROFILE -->
+        <button @click="delUser(user.userID)">Delete Profile</button>
           </div>
            </div>
             <div class="col-sm-8">
@@ -41,13 +112,9 @@
                     </div>
                     </div>
                     <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col">
                     <p class="m-b-10 f-w-600">Address</p>
                      <h6 class="text-muted f-w-400">{{user.userAdd}}</h6>
-                    </div>
-                    <div class="col-sm-6">
-                    <p class="m-b-10 f-w-600">Mobile Number</p>
-                    <h6 class="text-muted f-w-400">{{user.userMobile}}</h6>
                     </div>
                     </div>
               </div>
@@ -89,11 +156,58 @@
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
 export default {
+
+    data(){
+    return {
+       editUser:{
+       firstName: "",
+       lastName: "",
+       userEmail: "",
+       userRole: "user",
+       userAdd: "",
+       userMobile: ""
+        }
+        }
+      },
+       
        computed: {
         user() {
           return this.$store.state.user || cookies.get('user').result;
       },
+
+      updatedUser(){
+    return this.$store.dispatch ('updateUser', this.editUser) || cookies.get('user').result;
+   },
+
+
     },
+
+    methods:{
+      async updateUser (userID) {
+    console.log("clicked");
+      try {
+        const response = await this.$store.dispatch(userID) || cookies.get('user').result;
+        
+        if (response.msg) {
+          alert("Oops something seems wrong")
+        } else {
+          alert("Profile Updated")
+        }
+      } catch (error) {
+        this.errorMsg = "An error occurred while updating the user."
+      }
+    },
+
+    async delUser() {
+    try {
+      await this.$store.dispatch("deleteUser") || cookies.get('user').result;
+      alert("User Deleted")
+    } catch (error) {
+      this.errorMsg = "An error occurred "
+    }
+  },
+    }
+
     }
 </script>
 
@@ -131,7 +245,7 @@ export default {
 
 .bg-c-lite-green {
         background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#040404));
-    background: linear-gradient(to right, #000000, #f29263);
+    background: linear-gradient(to right, #fdad61, #e96a2a);
 }
 
 .user-profile {

@@ -372,6 +372,12 @@ export default createStore({
         }
       
       },
+
+      // logout
+      async logOut(context) {
+        context.commit('setUser')
+        cookies.remove("user")
+    },
 },
   modules: {
   },

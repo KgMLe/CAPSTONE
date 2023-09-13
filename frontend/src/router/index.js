@@ -35,7 +35,12 @@ const routes = [
   {
     path: '/profile',
     name: 'profile',
-    component: () => import('../views/ProfileView.vue')
+    component: () => import('../views/ProfileView.vue'),
+    beforeEnter(){
+      if (!cookies.get('user')) {
+        router.push('/login')
+      }
+    }
   },
   {
     path: '/admin',
@@ -64,6 +69,17 @@ const routes = [
     //       router.push ('/product/:id')
     //     }
     // }
+  },
+
+  {
+    path: "/logout",
+    name: "logout", 
+    component: () => import ( '../components/SingleProd.vue'),
+    beforeEnter(){
+      if (!cookies.get('user')) {
+        router.push('/logout')
+      }
+    }
   },
 ]
 

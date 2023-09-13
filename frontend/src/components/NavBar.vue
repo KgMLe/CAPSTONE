@@ -50,11 +50,33 @@ local_mall
                         <span class="material-symbols-outlined">account_circle</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                      <router-link class="dropdown-item" to="/profile">Login/SignUp User</router-link>
-                      <router-link class="dropdown-item" to="/admin">Login Admin</router-link>
-                      <!-- <router-link class="dropdown-item" >Logout</router-link> -->
+                      <router-link class="dropdown-item" to="/profile">User</router-link>
+                      <router-link class="dropdown-item" to="/admin">Admin</router-link>
+                      <router-link class="dropdown-item btn-danger" to ="/logout" data-bs-toggle="modal" data-bs-target="#modalConfirmDelete" >Logout</router-link>
                     </ul>
                 </li>
+                <div class="modal fade" id="modalConfirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm modal-danger">
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <h5 class="modal-title">You are about to logout</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+    <p>Please confrim below to logout</p>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a href="#" class="btn btn-outline-danger" @click="logOut">Confirm</a>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
      </ul>
     </div>
   </div>
@@ -85,13 +107,12 @@ local_mall
 
 <script>
 export default{
-  components:{
 
+  methods:{
+logOut(){
+  this.$store.dispatch ('logOut')
+}
   },
-
-
-
-
 }
 </script>
 
