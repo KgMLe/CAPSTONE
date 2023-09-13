@@ -340,21 +340,50 @@ export default createStore({
       },
 
       // add order
-      async registerOrder(context, payload) {
-        try {
-          const response = await axios.post(`${anchored}order/new`, payload);
-          const { msg, order } = response.data;
+      // async registerOrder(context, payload) {
+      //   try {
+      //     const response = await axios.post(`${anchored}order/new`, payload);
+      //     const { msg, order } = response.data;
   
-          if (msg) {
-            context.commit("setMsg", msg);
+      //     if (msg) {
+      //       context.commit("setMsg", msg);
+      //     } else {
+      //       context.commit("newOrder", order);
+      //       context.commit("setMsg", "Order added successfully");
+      //     }
+      //   } catch (e) {
+      //     context.commit("setMsg", "An error occurred while adding the order");
+      //   }
+      
+      // },
+      async addOrder(context, payload) {
+        try {
+              console.log(payload);
+
+          const { msg,token, result } = (await axios.post(`${anchored}order/new`, payload)).data;
+          if (result) {
+            context.commit("setOrder", { result, msg });
+            cookies.set("user", { msg, token, result });
+            authenticateUser.applyToken(token);
+            sweet({	
+              title: "msg",
+              text: `Registered under user ${result?.userID} ` ,
+              icon: "success",
+              timer: 4000,
+            });
+            context.dispatch("fetchOrders");
+            router.push({ name: "cart" }); 
           } else {
-            context.commit("newOrder", order);
-            context.commit("setMsg", "Order added successfully");
+            sweet({
+              title: "Error",
+              text: msg,
+              icon: "error",
+              timer: 4000
+            });
           }
         } catch (e) {
-          context.commit("setMsg", "An error occurred while adding the order");
+          context.commit("setMsg", "An error has occured");
         }
-      
       },
       // delete order
       async deleteOrder(context, id) {

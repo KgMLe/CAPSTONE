@@ -68,6 +68,9 @@
           View Details
         </button>
         </router-link>
+        <button class="btn" @click="cart(product)">
+          Add To Cart
+        </button>
         </div>
       </div> 
   </div>
@@ -84,15 +87,28 @@
 
 <script>
 import SpinnerComp from '@/components/SpinNer.vue'
-
+import { useCookies } from "vue3-cookies";
+const { cookies } = useCookies();
 export default {
        components:{
         SpinnerComp,
        },
        data(){
     return {
-  search:""
-};
+  search:"",
+
+   addCart:{
+    prodID: "",
+    prodName: "",
+    prodPrice: "",
+    prodURL: "",
+    prodCat: "",
+    prodDesc: ""
+   }
+
+}
+
+
   },
       computed:{
         products(){
@@ -116,6 +132,17 @@ export default {
 
        },
        methods:{
+        cart(product){
+          
+          const cookieInfo = cookies.get("user");
+         const{ result } = cookieInfo;
+         this.addCart.userID = result.userID;
+         this.addCart.prodID = product.prodID;
+         console.log(this.addCart);
+        this.$store.dispatch('addOrder', this.product)
+        },
+
+
     // sort amount Low to High
     sortAmount() {
       return this.$store.state.products.sort(

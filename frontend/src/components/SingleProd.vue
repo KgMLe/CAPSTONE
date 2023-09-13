@@ -31,7 +31,7 @@
             </div>
             
         </div>
-    <li class="list-group-item"><button  class="btn card-link" data-toggle="modal" data-target="#modalAbandonedCart" >Add to Cart</button></li>
+    <li class="list-group-item"><button  class="btn card-link" data-toggle="modal" data-target="#modalAbandonedCart">Add to Cart</button></li>
   </ul>
 
 <!-- Modal: modalAbandonedCart-->

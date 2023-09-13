@@ -170,15 +170,17 @@ export default {
         }
       },
        
-       computed: {
-        user() {
-          return this.$store.state.user || cookies.get('user').result;
-      },
-
-      updatedUser(){
+    computed: {
+    user() {
+    return this.$store.state.user || cookies.get('user').result;
+    },
+    updatedUser(){
     return this.$store.dispatch ('updateUser', this.editUser) || cookies.get('user').result;
-   },
-
+    },
+     
+    deleteProfile(){
+      return this.$store.dispatch ('deleteUser') 
+    }
 
     },
 
