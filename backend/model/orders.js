@@ -51,7 +51,7 @@ fetchOrders(req, res) {
 addOrder(req, res) {
     const data = req.body;
     const query = `
-    INSERT INTO ORDERS
+    INSERT INTO orders
     SET ?;
     `;
 
