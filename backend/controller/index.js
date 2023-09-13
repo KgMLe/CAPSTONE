@@ -80,9 +80,10 @@ routes.get("/order/:id", (req, res) => {
 })
 
 // add order
-routes.post("/order/new", (req, res)=>{
+routes.post("/order/new",  bodyParser.json(),(req, res)=>{
   orders.addOrder(req, res)
 })
+ 
 
 // update order
 routes.patch("/order/:id", bodyParser.json(), (req, res) => {
