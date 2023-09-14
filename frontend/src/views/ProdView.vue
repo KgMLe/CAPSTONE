@@ -110,13 +110,13 @@ export default {
 
 
   },
-      computed:{
-        products(){
+  computed:{
+  products(){
             return this.$store.state.products
-        },
-        filteredProducts() {
+  },
+  filteredProducts() {
          // Convert searchQuery to lowercase for case-insensitive search
-    const search = this.search.toLowerCase();
+  const search = this.search.toLowerCase();
   return this.products.filter((products) => {
   const prodName = products.prodName.toLowerCase(); //filter on accountname
   return (

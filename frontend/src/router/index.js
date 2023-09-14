@@ -27,11 +27,6 @@ const routes = [
     name: 'cart',
     component: () => import('../views/CartView.vue')
   },
-  // {
-  //   path: '/',
-  //   name: 'home',
-  //   component: HomeView
-  // },
   {
     path: '/profile',
     name: 'profile',
@@ -45,7 +40,23 @@ const routes = [
   {
     path: '/admin',
     name: 'admin',
-    component: () => import('../views/AdminView.vue')
+    component: () => import('../views/AdminView.vue'),
+    beforeEnter(){
+      if (!cookies.get('user')) {
+        router.push('/adminlogin')
+      }
+    }
+  },
+  // adminLogin
+  {
+    path: "/adminlogin",
+    name: "adminLogin", 
+    component: () => import ( '../components/AdminLogin.vue'),
+    // afterEnter(){
+    //     if(cookies.get('user')){
+    //       router.push ('/product/:id')
+    //     }
+    // }
   },
 
   {
@@ -64,23 +75,23 @@ const routes = [
     path: "/login",
     name: "loginPage", 
     component: () => import ( '../components/LogIn.vue'),
-    // afterEnter(){
-    //     if(cookies.get('user')){
-    //       router.push ('/product/:id')
-    //     }
-    // }
-  },
-
-  {
-    path: "/logout",
-    name: "logout", 
-    component: () => import ( '../components/SingleProd.vue'),
-    beforeEnter(){
-      if (!cookies.get('user')) {
-        router.push('/logout')
-      }
+    afterEnter(){
+        if(!cookies.get('user')){
+          router.push ('/product/:id')
+        }
     }
   },
+
+  // {
+  //   path: "/logout",
+  //   name: "logout", 
+  //   component: () => import ( '../components/SingleProd.vue'),
+  //   beforeEnter(){
+  //     if (!cookies.get('user')) {
+  //       router.push('/logout')
+  //     }
+  //   }
+  // },
 ]
 
 const router = createRouter({

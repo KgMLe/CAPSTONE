@@ -81,27 +81,62 @@ local_mall
     </div>
   </div>
 </nav>
-<!-- <nav class="navbar">
-        <div class="container">
-          
-            <div class="logo">
-              <router-link to="/">
+<!-- new navbar -->
+    <!-- <div id="menuHolder">
+      <div role="navigation" class="sticky-top border-bottom border-top" id="mainNavigation">
+        <div class="flexMain">
+          <div class="flex2">
+            <button class="whiteLink siteLink" style="border-right:1px solid #eaeaea" onclick="menuToggle()"><i class="fas fa-bars me-2"></i> MENU</button>
+          </div>
+          <div class="flex3 text-center" id="siteBrand">
+            <router-link to="/">
 <img src="https://i.postimg.cc/prwPd5L6/blacklogo-removebg-preview.png" alt="logo">
      </router-link>
-            </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search...">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+          </div>
+    
+          <div class="flex2 text-end d-block d-md-none">
+            <button class="whiteLink siteLink"><i class="fas fa-search"></i></button>
+          </div>
+    
+          <div class="flex2 text-end d-none d-md-block">
+            <li class="nav-item dropdown me-3 me-lg-1">
+                    <a class="nav-link dropdown-toggle hidden-arrow"
+                        href="#"
+                        id="navbarDropdownMenuLink"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <span class="material-symbols-outlined">account_circle</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                      <router-link class="dropdown-item" to="/profile">User</router-link>
+                      <router-link class="dropdown-item" to="/admin">Admin</router-link>
+                      <router-link class="dropdown-item btn-danger" to ="/logout" data-bs-toggle="modal" data-bs-target="#modalConfirmDelete" >Logout</router-link>
+                    </ul>
+                </li>
+          </div>
         </div>
-    </nav> -->
-
+      </div>
+    
+      <div id="menuDrawer">
+        <div class="p-4 border-bottom">
+          <div class='row'>
+            <div class="col text-end ">
+              <i class="fas fa-times" role="btn" onclick="menuToggle()"></i>
+            </div>
+          </div>
+        </div>
+        <div>
+          <a href="#" class="nav-menu-item"><i class="fas fa-home me-3"></i>Home</a>
+          <a href="#" class="nav-menu-item"><i class="fab fa-product-hunt me-3"></i>Products</a>
+          <a href="#" class="nav-menu-item"><i class="fas fa-search me-3"></i>Explore</a>
+          <a href="#" class="nav-menu-item"><i class="fas fa-wrench me-3"></i>Services</a>
+          <a href="#" class="nav-menu-item"><i class="fas fa-dollar-sign me-3"></i>Pricing</a>
+          <a href="#" class="nav-menu-item"><i class="fas fa-file-alt me-3"></i>Blog</a>
+          <a href="#" class="nav-menu-item"><i class="fas fa-building me-3"></i>About Us</a>
+        </div>
+      </div>
+    </div> -->
 </div>
 </template>
 
@@ -142,79 +177,92 @@ img[alt= "logo"]{
     width: 15rem;
     padding-right: 5px !important;
 }
+/* second one */
+.flexMain {
+      display:flex;
+      align-items: center
+  }
 
-/* Reset some default styles for better consistency */
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-/* Navbar styles */
-.navbar {
-    background-color: black;
-    color: #fff;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; 
-}
-
-.logo {
-    text-align: center !important;  /* Center the logo */
-}
-
-
-.search-bar {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar input[type="text"] {
-    padding: 10px;
-    border: none;
-    border-radius: 50px  #BC6C25;
-}
-
-.nav-links {
-    margin-top: 20px;
-    flex: 1; /* Take remaining horizontal space */
-    display: flex;
-    justify-content: center; /* Center the links on smaller screens */
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color:  #BC6C25;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .search-bar {
-        margin-top: 20px;
-        flex-basis: 100%; /* Take full width on smaller screens */
-        justify-content: center; /* Center the search bar */
+    .flex1 { flex:1 }
+    .flex2 { flex:2 }
+    .flex3 { flex:3 }
+    
+    button.siteLink {
+      margin-left:-5px;
+      border:none;
+      padding:24px;
+      display:inline-block;
+      min-width:115px;
     }
-}
 
+    /* .whiteLink {
+      background : #fff;
+    } */
+    .whiteLink:active {
+      /* background : #000; */
+      color: #fff;
+    }
+    .blackLink {
+      color: #fff;
+      /* background:#232323;
+      transition: all 300ms linear; */
+    }    
+    /* .blackLink:active {
+      color: #000;
+      background:#fff
+    } */
+    #siteBrand {
+      font-family: impact;
+      letter-spacing : -1px;
+      font-size:32px;
+      color:#252525;
+      line-height : 1em;
+    }
+    #menuDrawer {
+      background:black;
+      position:fixed;
+      height:100vh;
+      overflow:auto;
+      z-index:12312;
+      top:0;
+      left:0;
+      border-right:1px solid #eaeaea;
+      min-width:25%;
+      max-width:320px;
+      width:100%;
+      transform : translateX(-100%);
+      transition : transform 200ms linear;
+    }
+    #mainNavigation {
+      transition : transform 200ms linear;
+      /* background : black; */
+    }
+    .drawMenu > #menuDrawer {
+      transform : translateX(0%);
+    }
+    .drawMenu > #mainNavigation {
+      transform : translateX(25%);
+    }
+    .fa-times {
+      cursor : pointer
+    }
+    a.nav-menu-item:hover {
+      margin-left:2px;
+      border-left:10px solid black;
+    }
+    a.nav-menu-item{
+      transition:border 200ms linear;
+      text-decoration:none;
+      display:block;
+      padding:18px;
+      padding-left:32px;
+      border-bottom:1px solid #eaeaea;
+      font-weight:bold;
+      color:#343434
+    }
+    select.noStyle {
+      border:none;
+      outline:none
+    }
 </style>
 

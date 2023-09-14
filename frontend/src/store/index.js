@@ -251,7 +251,7 @@ export default createStore({
             timer: 4000,
           });
           context.dispatch("fetchUsers");
-          router.push({ name: "login" });
+          router.push('/login');
         } else { //if not posted then give us this sweet error
           sweet({
             title: "Error",
@@ -282,7 +282,38 @@ export default createStore({
               icon: "success",
               timer: 4000,
             });
-            router.push({ name: "SingleProd" }); //page i want to go after
+            router.push('/products' ); 
+          } else {
+            sweet({
+              title: "Error",
+              text: msg,
+              icon: "error",
+              timer: 4000,
+            });
+          }
+        } catch (e) {
+          context.commit("setMsg", "An error has occured");
+        }
+      },
+
+      // admin login
+      async adminLogin(context, payload) {
+        try {
+          const { msg, token, result } = (
+            await axios.post(`${anchored}admin`, payload) 
+          ).data;
+          // console.log( msg, token, result);
+          if (result) {
+            context.commit("setUser", { result, msg });
+            cookies.set('user', { msg, token, result });
+            authenticateUser.applyToken(token);
+            sweet({
+              title: msg,
+              text: `Welcome back, ${result?.FirstName} ${result?.LastName} , youre logged in as admin`,
+              icon: "success",
+              timer: 4000,
+            });
+            router.push('/admin'); //page i want to go after
           } else {
             sweet({
               title: "Error",
