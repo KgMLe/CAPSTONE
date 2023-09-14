@@ -7,14 +7,11 @@
     <div class="col-6">
       <img :src="$route.query.prodURL" class="card-img-top" :alt="$route.query.prodName"/>
     </div>
-    <div class="col-6"> <h5>{{$route.query.prodName}}</h5>
-        <p>
-          {{ $route.query.prodDesc }}</p>
-        <p>
-          
-          {{ $route.query.amount}}</p>
+    <div class="col-6">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"> R{{ $route.query.prodPrice  }}</li>
+        <li class="list-group-item"><h5>{{$route.query.prodName}}</h5></li>
+          <li class="list-group-item"><p>
+          {{ $route.query.prodDesc}}</p></li>
     <li class="list-group-item"> R{{ $route.query.prodPrice  }}</li>
     <span class="product-size">
                 <h4>Sizes available</h4>

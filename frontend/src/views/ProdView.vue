@@ -105,8 +105,6 @@ export default {
     prodName: "",
     prodPrice: "",
     prodURL: "",
-    prodCat: "",
-    prodDesc: ""
    }
 
 }
@@ -115,7 +113,7 @@ export default {
   },
   computed:{
   products(){
-            return this.$store.state.products
+  return this.$store.state.products
   },
   filteredProducts() {
          // Convert searchQuery to lowercase for case-insensitive search
@@ -128,22 +126,26 @@ export default {
 });
     },
 
-      // filterCategory
+  // filterCategory
   // selectedCardio(){
   //     return this.$store.state.products.find(products => products.prodCat ==='cardio');
   //   } 
 
-       },
-       methods:{
-        cart(product){
-          
-          const cookieInfo = cookies.get("user");
-         const{ result } = cookieInfo;
-         this.addCart.userID = result.userID;
-         this.addCart.prodID = product.prodID;
-         console.log(this.addCart);
-        this.$store.dispatch('addOrder', this.product)
-        },
+},
+
+methods:{
+  cart(product){
+  const cookieInfo = cookies.get("user");
+  const{ result } = cookieInfo;
+  this.addCart.userID = result.userID;
+  this.addCart.prodID = product.prodID;
+  this.addCart.prodName = product.prodName;
+  this.addCart.prodPrice = product.prodPrice;
+  this.addCart.prodURL = product.prodURL;
+  console.log('checking');
+  // console.log(this.addCart);
+  this.$store.dispatch('addOrder', this.product)
+ },
 
 
     // sort amount Low to High
@@ -160,11 +162,10 @@ export default {
    
     },
 
-       mounted(){
-        this.$store.dispatch('fetchProducts')
-  
-       } 
-     }
+ mounted(){
+  this.$store.dispatch('fetchProducts')  
+ } 
+}
 
    
   

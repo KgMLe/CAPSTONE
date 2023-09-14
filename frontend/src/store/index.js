@@ -15,7 +15,7 @@ export default createStore({
     user: null,
     products: null,
     product: null,
-    orders: null,
+    orders: [],
     order: null,
     cartItems: null,
     category: null,
@@ -69,12 +69,12 @@ export default createStore({
       state.products = state.products.map(p => p.id === product.id ? product : p)
     },
     // cart and order stuff
-    addToCart(state, item) {
-      state.cartItems.push(item);
-    },
-    delFromCart(state, index) {
-      state.cartItems.splice(index, 1);
-    },
+    // addToCart(state, item) {
+    //   state.cartItems.push(item);
+    // },
+    // delFromCart(state, index) {
+    //   state.cartItems.splice(index, 1);
+    // },
     setOrders(state, orders){
       state.orders = orders
     },
@@ -295,7 +295,6 @@ export default createStore({
           context.commit("setMsg", "An error has occured");
         }
       },
-
       // admin login
       async adminLogin(context, payload) {
         try {
@@ -327,82 +326,24 @@ export default createStore({
         }
       },
 
-      // cart stuff
-      // add to cart
-      // addToCart({ commit, state }, product) {
-      //   const existingItemIndex = state.cartItems.findIndex(cartItem => cartItem.id === product.id);
-    
-      //   if (existingItemIndex !== -1) {
-      //     // Handle item already in the cart (e.g., increment quantity)
-      //   } else {
-      //     commit('addToCart', item);
-      //   }
-      // },
-      // remove from cart
-      removeFromCart({ commit }, index) {
-        commit('removeFromCart', index);
-      },
-
-      // checkout
-      checkout({ commit, state }) {
-        const order = {
-          items: state.cartItems,
-      } 
-      commit('newOrder', order);
-      commit('clearCart'); // Clear the cart after creating an order
-    },
-      // fetch orders
-      async fetchOrders(context){
-        try{
-            const {data} = await axios.get(`${anchored}orders`)
-            context.commit("setOrders", data.results )
-        }catch(e){
-          context.commit("setMsg", "An error occured")
-        }  
-  },
-      // fetch order
-      async fetchOrder(context, id){
-        try{
-            const {data} = await axios.get(`${anchored}order/${id}`)
-            context.commit("setOrder", data.results )
-        }catch(e){
-          context.commit("setMsg", "An error occured")
-        }  
-      },
-
-      // add order
-      // async registerOrder(context, payload) {
-      //   try {
-      //     const response = await axios.post(`${anchored}order/new`, payload);
-      //     const { msg, order } = response.data;
-  
-      //     if (msg) {
-      //       context.commit("setMsg", msg);
-      //     } else {
-      //       context.commit("newOrder", order);
-      //       context.commit("setMsg", "Order added successfully");
-      //     }
-      //   } catch (e) {
-      //     context.commit("setMsg", "An error occurred while adding the order");
-      //   }
-      
-      // },
+      // new order
       async addOrder(context, payload) {
         try {
-              console.log(payload);
-
+            
+              // console.log(payload);
+              console.log('other side test');
           const { msg,token, result } = (await axios.post(`${anchored}order/new`, payload)).data;
           if (result) {
-            context.commit("setOrder", { result, msg });
+            context.commit("newOrder", { result, msg });
             cookies.set("user", { msg, token, result });
             authenticateUser.applyToken(token);
             sweet({	
               title: "msg",
-              text: `Registered under user ${result?.userID} ` ,
+              text: `Item added to cart ` ,
               icon: "success",
               timer: 4000,
             });
-            context.dispatch("fetchOrders");
+            context.dispatch("newOrder");
             router.push({ name: "cart" }); 
           } else {
             sweet({
