@@ -72,6 +72,9 @@
           Add To Cart
         </button>
         </div>
+
+        <!--modal add to cart  -->
+        
       </div> 
   </div>
   </div>

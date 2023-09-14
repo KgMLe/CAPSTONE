@@ -25,7 +25,12 @@ const routes = [
   {
     path:'/cart',
     name: 'cart',
-    component: () => import('../views/CartView.vue')
+    component: () => import('../views/CartView.vue'),
+    beforeEnter(){
+      if (!cookies.get('user')) {
+        router.push('/login')
+      }
+    }
   },
   {
     path: '/profile',
@@ -75,11 +80,11 @@ const routes = [
     path: "/login",
     name: "loginPage", 
     component: () => import ( '../components/LogIn.vue'),
-    afterEnter(){
-        if(!cookies.get('user')){
-          router.push ('/product/:id')
-        }
-    }
+    // afterEnter(){
+    //     if(!cookies.get('user')){
+    //       router.push ('/product/:id')
+    //     }
+    // }
   },
 
   // {

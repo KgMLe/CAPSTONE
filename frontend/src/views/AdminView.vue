@@ -5,7 +5,7 @@
         <h1 style="padding 3%">
           <span class="material-symbols-outlined">
 admin_panel_settings
-</span> Admin
+</span> Admin logged in as: {{user.firstName}} {{ user.lastName }}
         </h1>
       </center>
     </div>
@@ -114,32 +114,27 @@ admin_panel_settings
   </div>
   </div>
   <!-- DELETE PRODUCT -->
-      <td><button  data-bs-toggle="modal" data-bs-target="#modalConfirmDelete">
+      <td><button  @click="delProd(product.prodID)"> 
         Delete
       </button></td>
-<!-- Modal: modalConfirmDelete -->
-<div class="modal fade" id="modalConfirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal: modalConfirm -->
+<!-- <div class="modal fade" id="modalConfirm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-sm modal-danger">
     <div class="modal-content text-center">
-      <!--Header-->
       <div class="modal-header d-flex justify-content-center">
-        <h5 class="modal-title">Are you sure?</h5>
+        <h5 class="modal-title">Are you sure you want to delete this product?</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-
-      <!--Body-->
       <div class="modal-body">
     <p>This action cannot be reversed.</p>
       </div>
-
-      <!--Footer-->
       <div class="modal-footer justify-content-center">
         <a href="#" class="btn btn-outline-danger" @click="delProd(product.prodID)">Yes</a>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
       </div>
     </div>
   </div>
-</div>
+</div> -->
  </tr>
  <!-- ADD PRODUCT BUTTON -->
     <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#addProductModal"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
@@ -236,7 +231,8 @@ admin_panel_settings
 
 <script>
 import SpinnerComp from '@/components/SpinNer.vue'
-
+import { useCookies } from "vue3-cookies";
+const { cookies } = useCookies();
 export default {
 components:{
         SpinnerComp,
@@ -272,6 +268,10 @@ components:{
   },
 
  computed:{
+  user() {
+    return this.$store.state.user || cookies.get('user').result;
+    },
+
   users(){
     return this.$store.state.users
   },
@@ -286,7 +286,8 @@ components:{
   },
   updatedProd(){
     return this.$store.dispatch ('updateProduct', this.editProd)
-  }
+  },
+
  },
 
  methods:{

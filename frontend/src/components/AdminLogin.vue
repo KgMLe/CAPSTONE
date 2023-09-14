@@ -99,7 +99,7 @@ export default{
   methods: {
  adminLogin() {
   this.$store.dispatch("adminLogin", this.userLogin),
-  router.push({ name: "singleProd" });
+  router.push('/admin');
   },
   beforeCreate() {
     this.$store.dispatch("fetchUsers");

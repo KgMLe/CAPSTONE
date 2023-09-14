@@ -79,6 +79,9 @@
 </div>
   </div>
 </div>
+
+<!-- modal for single product -->
+  
   </div>
   </template>
   

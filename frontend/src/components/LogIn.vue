@@ -171,14 +171,13 @@ export default{
   },
 
   methods: {
-
     newUser(){
     this.$store.dispatch('addUser', this.addUser)
    },
 
    login() {
       this.$store.dispatch("login", this.userLogin),
-      router.push({ name: "singleProd" });
+      router.push('/products');
   },
   beforeCreate() {
     this.$store.dispatch("fetchUsers");
