@@ -9,6 +9,7 @@ const routes = express.Router();
 const { users } = require("../model");
 const { products } = require("../model");
 const { orders } = require("../model");
+const { admin }  = require("../model");
 
 
 //-----------routing to USERS-----------------------
@@ -37,6 +38,10 @@ routes.delete("/user/:id", (req, res) => {
 routes.post("/login", bodyParser.json(), (req, res) => {
     users.login(req, res);
   });
+// login an admin
+routes.post("/admin", bodyParser.json(), (req, res) => {
+  users.adminLogin(req, res);
+});
 // _______________________________________________________________________
 //PRODUCTS
 
