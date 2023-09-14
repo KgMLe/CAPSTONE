@@ -11,26 +11,22 @@
         <p>
           {{ $route.query.prodDesc }}</p>
         <p>
+          
           {{ $route.query.amount}}</p>
       <ul class="list-group list-group-flush">
-    <li class="list-group-item"> {{ $route.query.prodCat  }}</li>
-    <li class="list-group-item"> <button type="button" class="btn btn-outline-dark">XS</button>
-      <button type="button" class="btn btn-outline-dark">S</button>
-      <button type="button" class="btn btn-outline-dark">M</button>
-      <button type="button" class="btn btn-outline-dark">L</button>
-      <button type="button" class="btn btn-outline-dark">XL</button>
-      <button type="button" class="btn btn-outline-dark">XXL</button></li>
-    <!-- <li class="list-group-item">Color Radio</li> -->
-    <div >
-            <span>Available colors</span>
-            <div class="colors">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-        </div>
+        <li class="list-group-item"> R{{ $route.query.prodPrice  }}</li>
+    <li class="list-group-item"> R{{ $route.query.prodPrice  }}</li>
+    <span class="product-size">
+                <h4>Sizes available</h4>
+                <ul class="ul-size">
+                  <li><a href="#">XS</a></li>
+                  <li><a href="#">S</a></li>
+                  <li><a href="#">M</a></li>
+                  <li><a href="#" class="active">L</a></li>
+                  <li><a href="#">XL</a></li>
+                  <li><a href="#">XXL</a></li>
+                </ul>
+              </span>
     <li class="list-group-item"><button  class="btn card-link" data-toggle="modal" data-target="#modalAbandonedCart">Add to Cart</button></li>
   </ul>
 
@@ -100,42 +96,46 @@ export default{
   width: 15rem;
  }
 
- 
-.colors{
-    display:flex;
-    margin-top:2px;
+ .product-size h4 {
+  font-size: 15px;
+  padding: 0 21px;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
 }
 
-.colors span{
-    width:20px;
-    height:20px;
-    border-radius:50%;
-    cursor:pointer;
-    display:flex;
-    margin-right:6px;
+.ul-size {
+  margin-left: 15px;
 }
 
-.colors span:nth-child(1) {
-    
-    background-color:black;
-    
+.ul-size li {
+  list-style: none;
+  float: left;
+  margin-right: 20px;
 }
 
-.colors span:nth-child(2) {
-    
-    background-color:orange;
-    
+.ul-size li a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 11px;
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 23px;
+  color: #000;
 }
 
-.colors span:nth-child(3) {
-    
-    background-color:rgb(49, 17, 0);
-    
+.ul-size li a.active {
+  background:black;
+  color: #fff;
 }
 
-.colors span:nth-child(4) {
-    
-    background-color:rgb(225, 221, 221);
-    
+.product-size:before,
+.product-size:after {
+  content: '';
+  display: block;
+  clear: both;
 }
+
   </style>

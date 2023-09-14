@@ -46,34 +46,34 @@
                                         <span class="input-group-text"><span class="glyphicon glyphicon-user"></span></span>
                                         <input type="email" class="form-control" id="lastName" placeholder="Lastname"  v-model="editUser.lastName">
                                     </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="inputEmail" class="form-label">Email address</label>
-                                    <div class="input-group pb-modalreglog-input-group">
-                                        <span class="input-group-text"><span class="glyphicon glyphicon-user"></span></span>
-                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" v-model="editUser.userEmail">
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="countries" class="form-label">User Role</label>
-                                    <div class="input-group pb-modalreglog-input-group">
-                                        <span class="input-group-text"><span class="glyphicon glyphicon-globe"></span></span>
-                                        <input type="text" class="form-control" id="userRole" placeholder="user" v-model="editUser.userRole">
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="age" class="form-label">Address</label>
-                                    <div class="input-group pb-modalreglog-input-group">
-                                        <input id="userAdd" class="form-control" 
-                                        placeholder="12 Street, Wynberg, WC" v-model="editUser.userAdd">
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="inputEmail" class="form-label">Mobile Number</label>
-                                    <div class="input-group pb-modalreglog-input-group">
-                                        <span class="input-group-text"><span class="glyphicon glyphicon-user"></span></span>
-                                        <input type="mobile" class="form-control" id="userMobile" placeholder="+234567890" v-model="editUser.userMobile">
-                                    </div>
+                             </div>
+                               <div class="mb-3">
+                                 <label for="inputEmail" class="form-label">Email address</label>
+                                 <div class="input-group pb-modalreglog-input-group">
+                                    <span class="input-group-text"><span class="glyphicon glyphicon-user"></span></span>
+                                 <input type="email" class="form-control" id="inputEmail" placeholder="Email" v-model="editUser.userEmail">
+                              </div>
+                              </div>
+                              <div class="mb-3">
+                               <label for="countries" class="form-label">User Role</label>
+                              <div class="input-group pb-modalreglog-input-group">
+                              <span class="input-group-text"><span class="glyphicon glyphicon-globe"></span></span>
+                             <input type="text" class="form-control" id="userRole" placeholder="user" v-model="editUser.userRole">
+                             </div>
+                             </div>
+                             <div class="mb-3">
+                             <label for="age" class="form-label">Address</label>
+                             <div class="input-group pb-modalreglog-input-group">
+                            <input id="userAdd" class="form-control" 
+                               placeholder="12 Street, Wynberg, WC" v-model="editUser.userAdd">
+                           </div>
+                         </div>
+                        <div class="mb-3">
+                      <label for="inputEmail" class="form-label">Mobile Number</label>
+                    <div class="input-group pb-modalreglog-input-group">
+                  <span class="input-group-text"><span class="glyphicon glyphicon-user"></span></span>
+                <input type="mobile" class="form-control" id="userMobile" placeholder="+234567890" v-model="editUser.userMobile">
+              </div>
             </div>
         </form>
       </div>

@@ -278,7 +278,7 @@ export default createStore({
             authenticateUser.applyToken(token);
             sweet({
               title: msg,
-              text: `Welcome back ${result?.FirstName} ${result?.LastName}`,
+              text: `Good to have you back`,
               icon: "success",
               timer: 4000,
             });
@@ -437,6 +437,7 @@ export default createStore({
       async logOut(context) {
         context.commit('setUser')
         cookies.remove("user")
+        router.push('/' ); 
     },
 },
   modules: {

@@ -130,7 +130,7 @@ export default {
 
       // filterCategory
   // selectedCardio(){
-  //     return this.$store.state.products.find(products => products.Category ==='cardio');
+  //     return this.$store.state.products.find(products => products.prodCat ==='cardio');
   //   } 
 
        },
