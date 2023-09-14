@@ -10,7 +10,7 @@ class Admin {
     const query = `
       SELECT userID, firstName, lastName, userEmail, userPass, userRole, userAdd
       FROM users
-      WHERE userEmail = '${userEmail}' AND userRole = 'admin';
+      WHERE userEmail = 'deline.ross@anchored.com' AND userRole = 'admin';
     `;  
     db.query(query, async (err, result) => {
       if (err) throw err;
