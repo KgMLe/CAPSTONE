@@ -78,23 +78,18 @@ routes.delete("/product/:id", (req, res) => {
 routes.get("/orders", (req, res) => {
   orders.fetchOrders(req, res);
 })
-
 //getting one order 
 routes.get("/order/:id", (req, res) => {
   orders.fetchOrder(req, res);
 })
-
 // add order
 routes.post("/order/new",  bodyParser.json(),(req, res)=>{
   orders.addOrder(req, res)
 })
- 
-
 // update order
 routes.patch("/order/:id", bodyParser.json(), (req, res) => {
   orders.updateOrder(req, res);
 })
-
 // delete order
 routes.delete("/order/:id", (req, res) => {
   orders.deleteOrder(req, res);
