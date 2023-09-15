@@ -19,8 +19,8 @@
               </router-link>
               <ul class="dropdown-menu" aria-labelledby="aboutDropdownMenuLink">
                 <li><router-link class="dropdown-item" to="/about">About Us</router-link></li>
-                <li><a class="dropdown-item" href="#">Blog</a></li>
-                <li><a class="dropdown-item" href="#">Contact us</a></li>
+                <li><a class="dropdown-item" href="#blogpost">Blog</a></li>
+                <li><a class="dropdown-item" href="#contact">Contact us</a></li>
               </ul>
              </li>
              <li class="nav-item">

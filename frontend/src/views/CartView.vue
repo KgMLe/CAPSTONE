@@ -36,10 +36,11 @@
          <hr class="my-0">
           </div>
           <div class="card-body">
-           <div class="row justify-content-between">
+           <div class="row justify-content-between" :user = "user">
              <div class="form-group">
               <label for="NAME" class="small text-muted mb-1">FULL ADDRESS</label>
-              <input type="text" class="form-control form-control-sm" name="NAME" id="NAME" aria-describedby="helpId" placeholder="12 Main str, Bendor, Limpopo">
+              <input type="text" class="form-control form-control-sm" name="NAME" id="NAME" aria-describedby="helpId">
+              {{ user.userAdd }}
              </div>
             </div>
             <div class="row mt-4">

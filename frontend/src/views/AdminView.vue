@@ -117,24 +117,7 @@ admin_panel_settings
       <td><button  @click="delProd(product.prodID)"> 
         Delete
       </button></td>
-<!-- Modal: modalConfirm -->
-<!-- <div class="modal fade" id="modalConfirm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-sm modal-danger">
-    <div class="modal-content text-center">
-      <div class="modal-header d-flex justify-content-center">
-        <h5 class="modal-title">Are you sure you want to delete this product?</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-    <p>This action cannot be reversed.</p>
-      </div>
-      <div class="modal-footer justify-content-center">
-        <a href="#" class="btn btn-outline-danger" @click="delProd(product.prodID)">Yes</a>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-      </div>
-    </div>
-  </div>
-</div> -->
+
  </tr>
  <!-- ADD PRODUCT BUTTON -->
     <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#addProductModal"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
@@ -206,18 +189,17 @@ admin_panel_settings
       <th>Image</th>
       <th>Price</th>
       <th>Shipping Address</th>
-      <th>Delivery Status</th>
     </tr>
     <tbody v-if = "orders">
       <tr v-for="order in orders" :key= "order.orderID">
       <td>{{ order.orderID }}</td>
-      <td> {{ }}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td> {{ order.firstName}}</td>
+      <td> [{{ order.lastName }}]</td>
+      <td> {{ order.prodName }}</td>
+      <td> {{ order.prodURL }}</td>
+      <td> {{ order.prodPrice }}</td>
+      <td> {{ order.userAdd }}</td>
+
     </tr>
     </tbody>
     <div v-else class="row justify-content-center">
@@ -281,9 +263,9 @@ components:{
   newProd (){
    return this.$store.dispatch('addProduct', this.addProd)
    },
-  orders(){
-    return this.$store.orders
-  },
+   orders(){
+            return this.$store.state.orders
+        },
   updatedProd(){
     return this.$store.dispatch ('updateProduct', this.editProd)
   },

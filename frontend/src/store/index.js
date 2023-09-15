@@ -309,7 +309,8 @@ export default createStore({
         }
       },
 
-      async fetchUserOrder(context, id){
+      // fetch user order
+        async fetchUserOrder(context, id){
         try {
           const {data} = await axios.get(`${anchored}/user/${id}/orders`)
           context.commit('setOrder', data )

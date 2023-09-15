@@ -1,7 +1,7 @@
 <template>
  <div class="container-fluid">
   <div class="row">
-    <div class="col" style="padding: 7%;">
+    <div class="col-sm-6" style="padding: 7%;">
       <h1 id="landingtext">Style that Inspires, Faith that Ignites.</h1>
       <br>
       <p>
@@ -12,7 +12,7 @@
       <router-link to="/products"> <button id="btn"> Shop Now</button></router-link>
      
     </div>
-    <div class="col">
+    <div class="col-sm-6">
     <img src="https://i.etsystatic.com/28379257/r/il/fa68cc/4560317533/il_fullxfull.4560317533_a1tv.jpg" alt="landing">
     </div>
   </div>
@@ -45,7 +45,6 @@ img[alt= "landing"]{
 #landingtext{
   font-size: 4rem;
   font-weight: 900;
-
 }
 
 .col{
@@ -97,5 +96,12 @@ color: white;
 text-decoration: none !important;
 font-size: 2rem;
 font-weight: bold;
+}
+
+@media (max-width: 828px) {
+  #landingtext{
+  font-size: 2.5rem;
+  font-weight: 900;
+}
 }
 </style>

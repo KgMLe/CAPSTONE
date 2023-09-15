@@ -128,8 +128,8 @@
 </div>
 <div class="container-fluid">
     <div class="row">
+      <h1 class="text-align center">Orders Summary</h1>
     <table class="table">
-  <h1 class="text-align center">Orders Summary</h1>
   <thead>
     <tr>
       <th scope="col">Order ID</th>
@@ -293,6 +293,11 @@ p {
 }
 }
 
+@media only screen and (max-width: 768px){
+.form-label {
+    font-size: 10px;
+}
+}
 .card-block {
     padding: 1.25rem;
 }

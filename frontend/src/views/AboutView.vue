@@ -54,13 +54,14 @@
   </div>
   <br>
     <div class="ft">
-        <div class="btn btn-primary"> <router-link to="/">Shop Items</router-link></div>
+        <div class="btn btn-primary"> <router-link to="/products">Shop Items</router-link></div>
     </div>
 </div>  
 </div>
 
     <div class="container text-center">
-  <div class="row">
+      <section id="blogposts">
+        <div class="row">
     <h1> Read Our Latest Blog Posts Here </h1>
     <div class="col text-center" id="blogpost" style="padding: 13%;">
       <a href="#popup-article" class="open-popup"> <p>Revolutionizing Christian Apparel</p></a>
@@ -115,21 +116,31 @@
     </a>  
     <div class="popup__content">
       <h1 class="popup__title r-title">Have you heard? We’re tossing our fast fashion wardrobe in favor of slow fashion.</h1>
-      <p></p>
-      <p>.</p>
-      <p></p>    
-      <p>.</p>
-      <p></p>
-      <p></p>
-      <p></p>
+      <h3>What exactly is slow fashion?</h3>
+      <p>It’s a fashion movement that seeks to eliminate waste and unfair trade and to promote conscious shopping</p>
+      <p>Pursuing slow fashion and intentional shopping doesn’t have to be expensive. For us, it’s about choosing outfits and accessories you’re head-over-heels in love with—and then wearing them for a long time.</p>
+      <h3>With slow fashion you:</h3>    
+      <p><ul>
+        <li>Only buy what you need</li>
+        <li>Use it until it wears out</li>
+        <li>Ensure your clothing is fair trade</li>
+        <li>Buy fabrics that easily break down or recycle</li>
+         <li>Encourage others to pursue a low-waste lifestyle</li>
+         <li>Don’t get caught up in materialism</li>
+      </ul></p>
+      <p>Being good stewards of our property and our finances is a Biblical principle. Even if you can’t achieve all of these pillars of slow fashion, you can still be part of the movement. Start small, do what you can, and commit your resources to God in prayer</p>
+   
     </div>
   </div>
 </div>
   </div>
+      </section>
+
   
   </div>
-  <!-- CONTACT PAGE -->
-  <div class="container-fluid" style="padding: 5%;">
+    <!-- CONTACT PAGE -->
+  <section id="contact">
+    <div class="container-fluid" style="padding: 5%;">
     <div class="responsive-cell-block wk-ipadp-6 wk-mobile-12 wk-desk-5 wk-tab-9" id="i6df">
         <h1>Want to know more?</h1>
         <p>We would love to hear from you, get in touch</p>
@@ -147,6 +158,9 @@
       </div>
   </div>
       
+  </section>
+
+
     </div>
 </template>
 
@@ -367,6 +381,13 @@ size: 100%;
 }
 
 @media (max-width: 768px) {
+.page-header {
+background: url("https://i.postimg.cc/NMk0rDmm/Hero-1600x.jpg") no-repeat;
+position: relative;
+background-size: cover;
+size: 100%;
+}
+
  .responsive-cell-block.wk-mobile-12.wk-ipadp-6.wk-desk-5 {
     margin-top: 0px;
     margin-right: 0px;
