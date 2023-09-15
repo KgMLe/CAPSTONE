@@ -92,18 +92,9 @@ export default{
       user() {
     return this.$store.state.user || cookies.get('user').result;
     },
-    filteredOrders() {
-    const search = this.search.toLowerCase();
-  return this.products.filter((products) => {
-  const prodName = products.prodName.toLowerCase(); //filter on accountname
-  return (
-    prodName.includes(search)
-   )
-   });
-   },
 
     orders(){
-            return this.$store.state.orders
+            return this.$store.state.orders|| cookies.get('user').result;
         },
         products(){
             return this.$store.state.products

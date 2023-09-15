@@ -17,6 +17,7 @@ export default createStore({
     product: null,
     orders: [],
     order: null,
+    userOrder: null,
     cartItems: null,
     category: null,
     categoryHoodies: null,
@@ -46,15 +47,6 @@ export default createStore({
     },
     newProduct (state, product){
       state.users.push(product)
-    },
-    categoryHoodies(state, category){
-      state.categoryHoodies = category
-    },
-    categoryGraphicT(state, category){
-      state.categoryGraphicT = category
-    },
-    categoryAccessories(state, category){
-      state.categoryAccessories = category
     },
     setProducts(state, products){
       state.products = products
@@ -319,7 +311,7 @@ export default createStore({
 
       async fetchUserOrder(context, id){
         try {
-          const {data} = await axios.get(`${anchored}order/${id}`)
+          const {data} = await axios.get(`${anchored}/user/${id}/orders`)
           context.commit('setOrder', data )
         }catch(e){
           context.commit('setMsg', 'An error occured')
