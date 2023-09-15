@@ -63,20 +63,49 @@
   <div class="row">
     <h1> Read Our Latest Blog Posts Here </h1>
     <div class="col text-center" id="blogpost" style="padding: 13%;">
-    <p> The Most Important Article <br> We Will Ever Write.</p>
+      <a href="#popup-article" class="open-popup"> <p>Revolutionizing Christian Apparel</p></a>
     </div>
-    <div class="col text-center" id="blog" style="padding: 13%">
-    <p>Cross T shirts and Their Designs</p>
+     <!-- article modal -->
+     <div id="popup-article" class="popup">
+  <div class="popup__container">
+    <a href="#" class="popup__close">
+      <span class="screen-reader"></span>
+    </a>  
+    <div class="popup__content">
+      <h1 class="popup__title r-title">How We Are Revolutionizing Christian Apparel to Fit Authentic Lifestyles</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eaque optio vitae in explicabo recusandae sit id sapiente excepturi tempore, nemo, nulla odio deleniti rerum nisi perferendis aut molestias! Incidunt nesciunt iusto praesentium! In at maiores quibusdam enim quis, quam!</p>
+      <p>Architecto magni dolores cumque tenetur nemo id aperiam, ratione temporibus at, consectetur totam, fuga et illo rerum earum dicta. Vitae ullam harum enim aliquid hic commodi voluptas cumque iste ex accusantium architecto doloremque reprehenderit, asperiores vero dolor, esse inventore dolorem.</p>
+      <p>Excepturi eaque, reprehenderit dolores, cum molestias repellendus in expedita. Placeat totam, quos pariatur quidem explicabo id harum ab voluptatum. Necessitatibus, aliquam! Dolorum voluptatem ut laudantium excepturi cumque, hic iure impedit ullam accusantium error natus recusandae, quia fuga quo voluptates officiis?</p>    
+      <p>Dignissimos debitis eos necessitatibus accusantium natus voluptates illo blanditiis corporis minus. Repudiandae libero quae, illo error expedita consectetur possimus voluptate eum esse quam molestiae tempore dignissimos ipsam similique ab quod. Ea earum adipisci rem voluptatem aliquid voluptatum deleniti necessitatibus provident.</p>
+      <p>Dicta eum amet impedit maiores accusamus numquam saepe necessitatibus temporibus ut! Velit ducimus repellendus fuga repudiandae culpa voluptatibus delectus praesentium totam odit ratione, tenetur assumenda, labore esse et nostrum a, aut veritatis. Nihil, voluptas, impedit? Magnam dolorum, iure repellendus vitae.</p>
+      <p>Temporibus voluptatum voluptatibus iste, nam atque dignissimos quam labore sequi adipisci tempore exercitationem quos, libero, reprehenderit facere quasi soluta, itaque at eum cum possimus! Facilis, tempora soluta at quis. Nemo expedita voluptate esse nam ex odit, sequi eveniet quibusdam, dolores?</p>
+      <p>Praesentium laboriosam iste dolore cumque voluptatibus deleniti quia, delectus provident, illum aperiam, atque molestiae. Cum delectus, doloribus expedita eius veritatis assumenda deleniti veniam reprehenderit animi ut, eaque asperiores, dicta incidunt omnis repellendus dolorum enim inventore rerum voluptatem saepe error id.</p>
     </div>
   </div>
-  <!-- <div class="row">
-    <div class="col text-center" id="blogpost" style="padding: 3%;">
-    <p> The Most Important Article <br> We Will Ever Write.</p>
+</div>
+
+    <div class="col text-center" id="blog" style="padding: 13%">
+      <a href="#readblog" class="open-popup"> <p>Cross T shirts and Their Designs</p></a>
     </div>
-    <div class="col text-center" id="blog" style="padding: 3%">
-    <p>Cross T shirts and Their Designs</p>
+    <div id="readblog" class="popup">
+  <div class="popup__container">
+    <a href="#" class="popup__close">
+      <span class="screen-reader"></span>
+    </a>  
+    <div class="popup__content">
+      <h1 class="popup__title r-title">The my adventure in the France and photography with Tour De France</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eaque optio vitae in explicabo recusandae sit id sapiente excepturi tempore, nemo, nulla odio deleniti rerum nisi perferendis aut molestias! Incidunt nesciunt iusto praesentium! In at maiores quibusdam enim quis, quam!</p>
+      <p>Architecto magni dolores cumque tenetur nemo id aperiam, ratione temporibus at, consectetur totam, fuga et illo rerum earum dicta. Vitae ullam harum enim aliquid hic commodi voluptas cumque iste ex accusantium architecto doloremque reprehenderit, asperiores vero dolor, esse inventore dolorem.</p>
+      <p>Excepturi eaque, reprehenderit dolores, cum molestias repellendus in expedita. Placeat totam, quos pariatur quidem explicabo id harum ab voluptatum. Necessitatibus, aliquam! Dolorum voluptatem ut laudantium excepturi cumque, hic iure impedit ullam accusantium error natus recusandae, quia fuga quo voluptates officiis?</p>    
+      <p>Dignissimos debitis eos necessitatibus accusantium natus voluptates illo blanditiis corporis minus. Repudiandae libero quae, illo error expedita consectetur possimus voluptate eum esse quam molestiae tempore dignissimos ipsam similique ab quod. Ea earum adipisci rem voluptatem aliquid voluptatum deleniti necessitatibus provident.</p>
+      <p>Dicta eum amet impedit maiores accusamus numquam saepe necessitatibus temporibus ut! Velit ducimus repellendus fuga repudiandae culpa voluptatibus delectus praesentium totam odit ratione, tenetur assumenda, labore esse et nostrum a, aut veritatis. Nihil, voluptas, impedit? Magnam dolorum, iure repellendus vitae.</p>
+      <p>Temporibus voluptatum voluptatibus iste, nam atque dignissimos quam labore sequi adipisci tempore exercitationem quos, libero, reprehenderit facere quasi soluta, itaque at eum cum possimus! Facilis, tempora soluta at quis. Nemo expedita voluptate esse nam ex odit, sequi eveniet quibusdam, dolores?</p>
+      <p>Praesentium laboriosam iste dolore cumque voluptatibus deleniti quia, delectus provident, illum aperiam, atque molestiae. Cum delectus, doloribus expedita eius veritatis assumenda deleniti veniam reprehenderit animi ut, eaque asperiores, dicta incidunt omnis repellendus dolorum enim inventore rerum voluptatem saepe error id.</p>
     </div>
-  </div> -->
+  </div>
+</div>
+  </div>
+  
   </div>
   <!-- CONTACT PAGE -->
   <div class="container-fluid" style="padding: 5%;">
@@ -84,8 +113,7 @@
         <h1>Want to know more?</h1>
         <p>We would love to hear drom you, get in touch</p>
         <div class="form-wrapper">
-          <form action="
-          ">
+          <form action="https://formspree.io/f/mjvqvkoe" method="POST">
           <input class="input input-element" name="Name" placeholder="Name" required>
           <input class="input input-element" name="Contact Number" placeholder="Contact Number">
           <input class="input input-element" name="Email" placeholder="Email" required>
@@ -125,6 +153,10 @@ p{
   padding-bottom: 10%;
 }
 
+#blogpost{
+   background-image: url(https://faithcenterco.com/cdn/shop/articles/blog-authentic_lifestyle.jpg?v=1678673912);
+}
+
 img[alt= "brandowners"]{
     width: 100%;
 }
@@ -142,14 +174,14 @@ margin: 0px;
 }
 a {
 text-decoration: none;
-color: #8d8f90;
+color: black;
  -webkit-transition: all 0.3s;
  -moz-transition: all 0.3s;
  transition: all 0.3s;
 }
  a:focus, a:hover {
  text-decoration: none;
- color: #f85759;
+ color: white;
 }
 .page-header {
 background: url("https://i.postimg.cc/RFVw1677/OUR-STORY-1.png") no-repeat;
@@ -394,5 +426,125 @@ size: 100%;
     margin-left: 0px;
   }
 
+}
+
+.popup:not(:target){
+  display: none;
+}
+
+.popup:target{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;  
+}
+
+.popup::before{
+  content: "";
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  top: 50%;
+}
+
+.popup::after{
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #f0f0f0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+}
+
+.popup__container{
+  box-sizing: border-box;  
+  padding: 5% 15%;
+  height: calc(100vh - 40px); /* 1 */
+  margin: auto; /* 1 */
+  overflow: auto; /* 1 */
+  overscroll-behavior: contain; /* 1 */
+}
+
+.popup__title{
+  --rTitleMarginBottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.popup__close{
+  width: 2rem;
+  height: 2rem;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTE5IDYuNDFMMTcuNTkgNSAxMiAxMC41OSA2LjQxIDUgNSA2LjQxIDEwLjU5IDEyIDUgMTcuNTkgNi40MSAxOSAxMiAxMy40MSAxNy41OSAxOSAxOSAxNy41OSAxMy40MSAxMnoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==);
+}
+
+/*
+animation
+*/
+
+.popup::before{
+  will-change: height, top;
+  animation: open-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) .65s both;
+}
+
+.popup::after{
+  will-change: width, opacity;
+  animation: line-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) both;
+}
+
+@keyframes line-animation{
+
+  0%{
+    width: 0;
+    opacity: 1;
+  }
+
+  99%{
+    width: 100%;
+    opacity: 1;
+  }
+
+  100%{
+    width: 100%;
+    opacity: 0;
+  }  
+}
+
+@keyframes open-animation{
+
+  0%{
+    height: 0;
+    top: 50%;
+  }
+
+  100%{
+    height: 100vh;
+    top: 0;
+  }
+}
+
+.popup__container{
+  animation: fade .5s ease-out 1.3s both;
+}
+
+@keyframes fade{
+
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
 }
 </style>

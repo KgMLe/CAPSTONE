@@ -100,13 +100,15 @@ export default {
     return {
   search:"",
 
-   addCart:{
+  addCart:{
     prodID: "",
-    prodName: "",
-    prodPrice: "",
-    prodURL: "",
+    userID: ""
+    // prodName: "",
+    // prodPrice: "",
+    // prodURL: "",
+    // prodCat: "",
+    // prodDesc: ""
    }
-
 }
 
 
@@ -124,9 +126,9 @@ export default {
   )
 });
 },
-
+// filter product category
   hoodies(){
-    return this.$store.state.products.filter(products => products.prodCat ==='Hoodies');
+    return this.$store.state.products.filter((products) => {products.prodCat ==='Hoodies'});
   },
   graphicTees(){
     return this.$store.state.products.filter(products => products.prodCat ==='GraphicTee');
@@ -142,12 +144,12 @@ methods:{
   const{ result } = cookieInfo;
   this.addCart.userID = result.userID;
   this.addCart.prodID = product.prodID;
-  this.addCart.prodName = product.prodName;
-  this.addCart.prodPrice = product.prodPrice;
-  this.addCart.prodURL = product.prodURL;
+  // this.addCart.prodName = product.prodName;
+  // this.addCart.prodPrice = product.prodPrice;
+  // this.addCart.prodURL = product.prodURL;
   // console.log('checking');
   console.log(this.addCart);
-  this.$store.dispatch('addOrder', this.product)
+  this.$store.dispatch('addOrder', this.addCart)
  },
 
 

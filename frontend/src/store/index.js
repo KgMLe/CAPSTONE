@@ -320,8 +320,7 @@ export default createStore({
       // new order
       async addOrder(context, payload) {
         try {
-            
-              // console.log(payload);
+            // console.log(payload);
               console.log('other side test');
           const { msg,token, result } = (await axios.post(`${anchored}order/new`, payload)).data;
           if (result) {
