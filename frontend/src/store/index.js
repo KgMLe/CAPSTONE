@@ -301,7 +301,7 @@ export default createStore({
       async fetchOrders(context){
         try {
           const {data} = await axios.get(`${anchored}orders`)
-          context.commit('setOrders', data.results )
+          context.commit('setOrders', data )
         }catch(e){
           context.commit('setMsg', 'An error occured')
         }
@@ -311,7 +311,16 @@ export default createStore({
       async fetchOrder(context, id){
         try {
           const {data} = await axios.get(`${anchored}order/${id}`)
-          context.commit('setOrder', data.results )
+          context.commit('setOrder', data )
+        }catch(e){
+          context.commit('setMsg', 'An error occured')
+        }
+      },
+
+      async fetchUserOrder(context, id){
+        try {
+          const {data} = await axios.get(`${anchored}order/${id}`)
+          context.commit('setOrder', data )
         }catch(e){
           context.commit('setMsg', 'An error occured')
         }

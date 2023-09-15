@@ -73,19 +73,40 @@
     </a>  
     <div class="popup__content">
       <h1 class="popup__title r-title">How We Are Revolutionizing Christian Apparel to Fit Authentic Lifestyles</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eaque optio vitae in explicabo recusandae sit id sapiente excepturi tempore, nemo, nulla odio deleniti rerum nisi perferendis aut molestias! Incidunt nesciunt iusto praesentium! In at maiores quibusdam enim quis, quam!</p>
-      <p>Architecto magni dolores cumque tenetur nemo id aperiam, ratione temporibus at, consectetur totam, fuga et illo rerum earum dicta. Vitae ullam harum enim aliquid hic commodi voluptas cumque iste ex accusantium architecto doloremque reprehenderit, asperiores vero dolor, esse inventore dolorem.</p>
-      <p>Excepturi eaque, reprehenderit dolores, cum molestias repellendus in expedita. Placeat totam, quos pariatur quidem explicabo id harum ab voluptatum. Necessitatibus, aliquam! Dolorum voluptatem ut laudantium excepturi cumque, hic iure impedit ullam accusantium error natus recusandae, quia fuga quo voluptates officiis?</p>    
-      <p>Dignissimos debitis eos necessitatibus accusantium natus voluptates illo blanditiis corporis minus. Repudiandae libero quae, illo error expedita consectetur possimus voluptate eum esse quam molestiae tempore dignissimos ipsam similique ab quod. Ea earum adipisci rem voluptatem aliquid voluptatum deleniti necessitatibus provident.</p>
-      <p>Dicta eum amet impedit maiores accusamus numquam saepe necessitatibus temporibus ut! Velit ducimus repellendus fuga repudiandae culpa voluptatibus delectus praesentium totam odit ratione, tenetur assumenda, labore esse et nostrum a, aut veritatis. Nihil, voluptas, impedit? Magnam dolorum, iure repellendus vitae.</p>
-      <p>Temporibus voluptatum voluptatibus iste, nam atque dignissimos quam labore sequi adipisci tempore exercitationem quos, libero, reprehenderit facere quasi soluta, itaque at eum cum possimus! Facilis, tempora soluta at quis. Nemo expedita voluptate esse nam ex odit, sequi eveniet quibusdam, dolores?</p>
-      <p>Praesentium laboriosam iste dolore cumque voluptatibus deleniti quia, delectus provident, illum aperiam, atque molestiae. Cum delectus, doloribus expedita eius veritatis assumenda deleniti veniam reprehenderit animi ut, eaque asperiores, dicta incidunt omnis repellendus dolorum enim inventore rerum voluptatem saepe error id.</p>
+      <p>
+        We created Anchored Life to foster community, celebrate diversity, and encourage unity among believers and non-believers. Whether your Christian hoodie shouts Jesus from the rooftops or provides a subtle reminder of the Kingdom of God, it is our goal to help you live your faith with confidence.
+      </p>
+
+<h3>We Encourage You to Share Your Faith in a Way That Works for You</h3>
+<p>We all have our own giftings—and some of us just aren not cut out for the preaching lifestyle. We want to support you in any form of ministry—from prayer to mentorship to Bible study leadership to the arts. We offer a variety of options that fit your unique personality, giftings, and ministry style.</p>
+
+
+<h3>We Believe God’s Love Is for Everyone</h3>
+<p>Whoever you are and wherever you are, God is waiting to capture your heart. Christian apparel shouldn’t just reflect some faith journeys, it should reflect all of them. God made us all perfectly unique, after all. Our heart is to provide clothing that people love to wear. Get excited about sharing Jesus again—wherever you are in your faith journey.
+</p>
+<h3>We Give Back to the Community</h3>
+<p>
+  Ministry is multi-faceted. Sometimes it involves speaking boldly about Christ and sometimes it’s about giving back to ministries that serve the least of these. A percentage of every item of Christian apparel sold goes to a local charity that’s feeding the hungry, giving orphans a home, and serving the people Jesus came to earth to love.
+</p>
+
+<h3>We Provide Accessible Resources to Strengthen Your Faith</h3>
+<p>Christian apparel is where we start—but not where we end. We love sharing encouraging devotionals, tangible Christian resources, and scripture-focused content to strengthen your faith and embolden you to share it with the world. Our goal is to minister to you as you minister to those around you. </p>
+
+<p>One of our favorite passages, Matthew 5:14-16, says: “You are the light of the world. A city set on a hill cannot be hidden; nor does anyone light a lamp and put it under a basket, but on the lampstand, and it gives light to all who are in the house. Let your light shine before men in such a way that they may see your good works, and glorify your Father who is in heaven.”</p>
+
+ <h2>Our Mission: A Scripture-Based Company That Encourages and Inspires You to Live Authentic Faith</h2>
+ <p>We’re passionate about sharing God’s love through scripture-based content and clothing. Even more than good reviews on our products, we love when our customers reach out and tell us that we were able to encourage them through difficult times or inspire them to dive back into God’s Word.</p>
+
+ <br>
+ <p>Wherever you are in your faith journey, know that we are walking alongside you every step of the way.</p>
+
+
     </div>
   </div>
 </div>
 
     <div class="col text-center" id="blog" style="padding: 13%">
-      <a href="#readblog" class="open-popup"> <p>Cross T shirts and Their Designs</p></a>
+      <a href="#readblog" class="open-popup"> <p>Let's talk Slow Fashion</p></a>
     </div>
     <div id="readblog" class="popup">
   <div class="popup__container">
@@ -93,14 +114,14 @@
       <span class="screen-reader"></span>
     </a>  
     <div class="popup__content">
-      <h1 class="popup__title r-title">The my adventure in the France and photography with Tour De France</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eaque optio vitae in explicabo recusandae sit id sapiente excepturi tempore, nemo, nulla odio deleniti rerum nisi perferendis aut molestias! Incidunt nesciunt iusto praesentium! In at maiores quibusdam enim quis, quam!</p>
-      <p>Architecto magni dolores cumque tenetur nemo id aperiam, ratione temporibus at, consectetur totam, fuga et illo rerum earum dicta. Vitae ullam harum enim aliquid hic commodi voluptas cumque iste ex accusantium architecto doloremque reprehenderit, asperiores vero dolor, esse inventore dolorem.</p>
-      <p>Excepturi eaque, reprehenderit dolores, cum molestias repellendus in expedita. Placeat totam, quos pariatur quidem explicabo id harum ab voluptatum. Necessitatibus, aliquam! Dolorum voluptatem ut laudantium excepturi cumque, hic iure impedit ullam accusantium error natus recusandae, quia fuga quo voluptates officiis?</p>    
-      <p>Dignissimos debitis eos necessitatibus accusantium natus voluptates illo blanditiis corporis minus. Repudiandae libero quae, illo error expedita consectetur possimus voluptate eum esse quam molestiae tempore dignissimos ipsam similique ab quod. Ea earum adipisci rem voluptatem aliquid voluptatum deleniti necessitatibus provident.</p>
-      <p>Dicta eum amet impedit maiores accusamus numquam saepe necessitatibus temporibus ut! Velit ducimus repellendus fuga repudiandae culpa voluptatibus delectus praesentium totam odit ratione, tenetur assumenda, labore esse et nostrum a, aut veritatis. Nihil, voluptas, impedit? Magnam dolorum, iure repellendus vitae.</p>
-      <p>Temporibus voluptatum voluptatibus iste, nam atque dignissimos quam labore sequi adipisci tempore exercitationem quos, libero, reprehenderit facere quasi soluta, itaque at eum cum possimus! Facilis, tempora soluta at quis. Nemo expedita voluptate esse nam ex odit, sequi eveniet quibusdam, dolores?</p>
-      <p>Praesentium laboriosam iste dolore cumque voluptatibus deleniti quia, delectus provident, illum aperiam, atque molestiae. Cum delectus, doloribus expedita eius veritatis assumenda deleniti veniam reprehenderit animi ut, eaque asperiores, dicta incidunt omnis repellendus dolorum enim inventore rerum voluptatem saepe error id.</p>
+      <h1 class="popup__title r-title">Have you heard? We’re tossing our fast fashion wardrobe in favor of slow fashion.</h1>
+      <p></p>
+      <p>.</p>
+      <p></p>    
+      <p>.</p>
+      <p></p>
+      <p></p>
+      <p></p>
     </div>
   </div>
 </div>
@@ -111,7 +132,7 @@
   <div class="container-fluid" style="padding: 5%;">
     <div class="responsive-cell-block wk-ipadp-6 wk-mobile-12 wk-desk-5 wk-tab-9" id="i6df">
         <h1>Want to know more?</h1>
-        <p>We would love to hear drom you, get in touch</p>
+        <p>We would love to hear from you, get in touch</p>
         <div class="form-wrapper">
           <form action="https://formspree.io/f/mjvqvkoe" method="POST">
           <input class="input input-element" name="Name" placeholder="Name" required>
@@ -155,6 +176,10 @@ p{
 
 #blogpost{
    background-image: url(https://faithcenterco.com/cdn/shop/articles/blog-authentic_lifestyle.jpg?v=1678673912);
+}
+
+#blog{
+   background-image: url(https://faithcenterco.com/cdn/shop/articles/blog-group-friends_207bb44d-6ae0-4713-92e7-ace5f740a06a.jpg?v=1680026235&width=1500);
 }
 
 img[alt= "brandowners"]{

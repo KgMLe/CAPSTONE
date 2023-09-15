@@ -138,12 +138,12 @@
       <th scope="col">Shipping Address</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody v-for="order in orders" :key= "order.orderID">
     <tr>
-      <td data-label="orderID">orderID</td>
-      <td data-label="prodName">prodID.prdName6</td>
-      <td data-label="prodPrice">prodID.prodprice</td>
-      <td data-label="userAdd">userID.userAdd</td>
+      <td data-label="orderID">{{order.orderID}}</td>
+      <td data-label="prodName">{{order.prodName }}</td>
+      <td data-label="prodPrice">{{order.prodPrice}}</td>
+      <td data-label="userAdd">{{order.userAdd}}</td>
     </tr>
   </tbody>
 </table>
@@ -180,6 +180,12 @@ export default {
      
     deleteProfile(){
       return this.$store.dispatch ('deleteUser') || cookies.get('user').result;
+    },
+    orders(){
+            return this.$store.state.orders
+        },
+        products(){
+            return this.$store.state.products
     }
 
     },
@@ -208,6 +214,10 @@ export default {
       this.errorMsg = "An error occurred "
     }
   },
+    },
+    mounted(){
+        this.$store.dispatch('fetchOrders')
+        
     }
 
     }
