@@ -82,6 +82,11 @@ routes.get("/orders", (req, res) => {
 routes.get("/order/:id", (req, res) => {
   orders.fetchOrder(req, res);
 })
+// get user order
+routes.get("/user/:id/orders", (req, res) => {
+  orders.fetchUserOrders(req, res);
+}),
+
 // add order
 routes.post("/order/new",  bodyParser.json(),(req, res)=>{
   orders.addOrder(req, res)
