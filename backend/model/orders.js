@@ -25,7 +25,7 @@ fetchOrders(req, res) {
     })
   }
   // 
-  
+
 
   // fetch order by id
   fetchOrder(req, res) {
@@ -48,6 +48,28 @@ fetchOrders(req, res) {
         }
     })
   }
+
+//user order
+fetchUserOrder(req, res) {
+  const query = `
+  select o.orderID, u.firstName, u.lastName,p.prodName, p.prodUrl, p.prodPrice, u.userAdd
+  from orders o
+  inner join 
+  users u
+  using (userID)
+  inner join 
+  products p
+  using (prodID)
+  where u.userID = ${req.params.id};
+  `
+  db.query(query, (err, result) => {
+      if (err) {
+          console.log(err)
+      } else {
+          res.send(result)
+      }
+  })
+} 
 
 //   add order
 addOrder(req, res) {
