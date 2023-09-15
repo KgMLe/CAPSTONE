@@ -82,61 +82,36 @@ local_mall
   </div>
 </nav>
 <!-- new navbar -->
-    <!-- <div id="menuHolder">
-      <div role="navigation" class="sticky-top border-bottom border-top" id="mainNavigation">
-        <div class="flexMain">
-          <div class="flex2">
-            <button class="whiteLink siteLink" style="border-right:1px solid #eaeaea" onclick="menuToggle()"><i class="fas fa-bars me-2"></i> MENU</button>
-          </div>
-          <div class="flex3 text-center" id="siteBrand">
-            <router-link to="/">
-<img src="https://i.postimg.cc/prwPd5L6/blacklogo-removebg-preview.png" alt="logo">
-     </router-link>
-          </div>
-    
-          <div class="flex2 text-end d-block d-md-none">
-            <button class="whiteLink siteLink"><i class="fas fa-search"></i></button>
-          </div>
-    
-          <div class="flex2 text-end d-none d-md-block">
-            <li class="nav-item dropdown me-3 me-lg-1">
-                    <a class="nav-link dropdown-toggle hidden-arrow"
-                        href="#"
-                        id="navbarDropdownMenuLink"
-                        role="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <span class="material-symbols-outlined">account_circle</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                      <router-link class="dropdown-item" to="/profile">User</router-link>
-                      <router-link class="dropdown-item" to="/admin">Admin</router-link>
-                      <router-link class="dropdown-item btn-danger" to ="/logout" data-bs-toggle="modal" data-bs-target="#modalConfirmDelete" >Logout</router-link>
-                    </ul>
-                </li>
-          </div>
-        </div>
-      </div>
-    
-      <div id="menuDrawer">
-        <div class="p-4 border-bottom">
-          <div class='row'>
-            <div class="col text-end ">
-              <i class="fas fa-times" role="btn" onclick="menuToggle()"></i>
-            </div>
-          </div>
-        </div>
-        <div>
-          <a href="#" class="nav-menu-item"><i class="fas fa-home me-3"></i>Home</a>
-          <a href="#" class="nav-menu-item"><i class="fab fa-product-hunt me-3"></i>Products</a>
-          <a href="#" class="nav-menu-item"><i class="fas fa-search me-3"></i>Explore</a>
-          <a href="#" class="nav-menu-item"><i class="fas fa-wrench me-3"></i>Services</a>
-          <a href="#" class="nav-menu-item"><i class="fas fa-dollar-sign me-3"></i>Pricing</a>
-          <a href="#" class="nav-menu-item"><i class="fas fa-file-alt me-3"></i>Blog</a>
-          <a href="#" class="nav-menu-item"><i class="fas fa-building me-3"></i>About Us</a>
-        </div>
-      </div>
-    </div> -->
+<!-- <nav class="slidemenu"> -->
+  
+  <!-- Item 1 -->
+  <!-- <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle" checked/>
+  <label for="slide-item-1"><p class="icon">♬</p><span>Home</span></label>
+   -->
+  <!-- Item 2 -->
+  <!-- <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
+  <label for="slide-item-2"><p class="icon">★</p><span>About</span></label> -->
+  
+  <!-- Item 3 -->
+  <!-- <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle"/>
+  <label for="slide-item-3"><p class="icon">✈</p><span>Folio</span></label> -->
+  
+  <!-- Item 4 -->
+  <!-- <input type="radio" name="slideItem" id="slide-item-4" class="slide-toggle"/>
+  <label for="slide-item-4"><p class="icon">✎</p><span>Blog</span></label> -->
+
+  <!-- Item 5 -->
+  <!-- <input type="radio" name="slideItem" id="slide-item-4" class="slide-toggle"/>
+  <label for="slide-item-5"><p class="icon">✎</p><span>Blog</span></label>
+  
+  <div class="clear"></div> -->
+  
+  <!-- Bar -->
+  <!-- <div class="slider">
+    <div class="bar"></div>
+  </div>
+  
+</nav> -->
 </div>
 </template>
 
@@ -178,91 +153,95 @@ img[alt= "logo"]{
     padding-right: 5px !important;
 }
 /* second one */
-.flexMain {
-      display:flex;
-      align-items: center
-  }
 
-    .flex1 { flex:1 }
-    .flex2 { flex:2 }
-    .flex3 { flex:3 }
-    
-    button.siteLink {
-      margin-left:-5px;
-      border:none;
-      padding:24px;
-      display:inline-block;
-      min-width:115px;
-    }
 
-    /* .whiteLink {
-      background : #fff;
-    } */
-    .whiteLink:active {
-      /* background : #000; */
-      color: #fff;
-    }
-    .blackLink {
-      color: #fff;
-      /* background:#232323;
-      transition: all 300ms linear; */
-    }    
-    /* .blackLink:active {
-      color: #000;
-      background:#fff
-    } */
-    #siteBrand {
-      font-family: impact;
-      letter-spacing : -1px;
-      font-size:32px;
-      color:#252525;
-      line-height : 1em;
-    }
-    #menuDrawer {
-      background:black;
-      position:fixed;
-      height:100vh;
-      overflow:auto;
-      z-index:12312;
-      top:0;
-      left:0;
-      border-right:1px solid #eaeaea;
-      min-width:25%;
-      max-width:320px;
-      width:100%;
-      transform : translateX(-100%);
-      transition : transform 200ms linear;
-    }
-    #mainNavigation {
-      transition : transform 200ms linear;
-      /* background : black; */
-    }
-    .drawMenu > #menuDrawer {
-      transform : translateX(0%);
-    }
-    .drawMenu > #mainNavigation {
-      transform : translateX(25%);
-    }
-    .fa-times {
-      cursor : pointer
-    }
-    a.nav-menu-item:hover {
-      margin-left:2px;
-      border-left:10px solid black;
-    }
-    a.nav-menu-item{
-      transition:border 200ms linear;
-      text-decoration:none;
-      display:block;
-      padding:18px;
-      padding-left:32px;
-      border-bottom:1px solid #eaeaea;
-      font-weight:bold;
-      color:#343434
-    }
-    select.noStyle {
-      border:none;
-      outline:none
-    }
+.clear{
+  clear: both;
+}
+
+
+.slide-toggle{
+  display: none;
+}
+
+.slidemenu{
+  font-family: arial, sans-serif;
+  /* max-width: 600px; */
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+.slidemenu label{
+  width: 15%;
+  text-align: center;
+  display: block;
+  float: left;
+  color: #333;
+  opacity: 0.2;
+
+}
+
+.slidemenu label:hover{
+  cursor: pointer;
+  color: #666;
+}
+
+/* .slidemenu label span{
+  display: block;
+  padding: 10px;    
+} */
+
+.slidemenu label .icon{
+  font-size: 10px;
+  border: solid 2px #333;
+  text-align: center;
+  height: 25px;
+  width: 25px;
+  /* background-color: white; */
+  display: block;
+  margin: 0 auto;
+  line-height: 50px;
+  border-radius: 50%;
+}
+
+/*Bar Style*/
+
+.slider{
+  width: 100%;
+  height: 5px;
+  display: block;
+  background: #ccc;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.slider .bar{
+  width: 10%;
+  height: 5px;
+  background: #333;
+  border-radius: 5px;
+}
+
+/*Animations*/
+.slidemenu label, .slider .bar {
+  transition: all 500ms ease-in-out;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+}
+
+/*Toggle*/
+
+.slidemenu .slide-toggle:checked + label{
+  opacity: 1;
+}
+
+
+
+.slidemenu #slide-item-1:checked ~ .slider .bar{ margin-left: 0; }
+.slidemenu #slide-item-2:checked ~ .slider .bar{ margin-left: 25%; }
+.slidemenu #slide-item-3:checked ~ .slider .bar{ margin-left: 50%; }
+.slidemenu #slide-item-4:checked ~ .slider .bar{ margin-left: 75%; }
+.slidemenu #slide-item-5:checked ~ .slider .bar{ margin-left: 100%; }
+
 </style>
 

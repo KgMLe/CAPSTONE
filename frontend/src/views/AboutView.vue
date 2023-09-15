@@ -112,6 +112,8 @@ p{
   font-weight: 900;
   padding-left: 2%;
   text-align: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 
 img[alt= "brandowners"]{
@@ -266,7 +268,7 @@ background-size: cover;
   margin-right: 0px;
   margin-bottom: 60px;
   margin-left: 0px;
-  background-color: #b0ab4d;
+  background-color: black;
 }
 
  .form-wrapper {
