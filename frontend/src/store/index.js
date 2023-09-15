@@ -116,35 +116,7 @@ export default createStore({
           context.commit("setMsg", "An error occured")
         }
       },
-      //fetch categories
-      // fetch hoodies
-      async fetchHoodies(context){
-        try{
-            const {data} = await axios.get(`${anchored}products/categories/hoodies`)
-            context.commit("categoryHoodies", data.results )
-        }catch(e){
-          context.commit("setMsg", "An error occured")
-        }
-      },
-       // fetch shirts
-       async fetchGraphicT(context){
-        try{
-            const {data} = await axios.get(`${anchored}products/categories/graphictee`)
-            context.commit("categoryGraphicT", data.results )
-        }catch(e){
-          context.commit("setMsg", "An error occured")
-        }
-      },
-       // fetch accessories
-       async fetchAccessories(context){
-        try{
-            const {data} = await axios.get(`${anchored}products/categories/accessories`)
-            context.commit("categoryAccessories", data.results )
-        }catch(e){
-          context.commit("setMsg", "An error occured")
-        }
-      },
-       // add Product
+// add Product
        async addProduct(context, payload) {
                 try {
                   const response = await axios.post(`${anchored}product/new`, payload);
@@ -160,7 +132,7 @@ export default createStore({
                   context.commit("setMsg", "An error occurred while adding the product");
                 }
       },
-      // deletProduct
+// deletProduct
       async deleteProduct(context, id) {
               try {
                 const response = await axios.delete(`${anchored}product/${id}`);
@@ -323,6 +295,25 @@ export default createStore({
           }
         } catch (e) {
           context.commit("setMsg", "An error has occured");
+        }
+      },
+      // fetch orders
+      async fetchOrders(context){
+        try {
+          const {data} = await axios.get(`${anchored}orders`)
+          context.commit('setOrders', data.results )
+        }catch(e){
+          context.commit('setMsg', 'An error occured')
+        }
+      },
+
+      // fetch order
+      async fetchOrder(context, id){
+        try {
+          const {data} = await axios.get(`${anchored}order/${id}`)
+          context.commit('setOrder', data.results )
+        }catch(e){
+          context.commit('setMsg', 'An error occured')
         }
       },
 

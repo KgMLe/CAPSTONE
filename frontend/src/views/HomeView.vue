@@ -16,15 +16,15 @@
     <img src="https://i.etsystatic.com/28379257/r/il/fa68cc/4560317533/il_fullxfull.4560317533_a1tv.jpg" alt="landing">
     </div>
   </div>
-  <div class="row text-center" style="padding: 5%;">
+  <!-- <div class="row text-center" style="padding: 5%;"> -->
     <!-- <h1>SOur Product Offerings</h1> -->
-    <router-link to="/"></router-link>
+    <!-- <router-link to="/"></router-link>
     <div class="col" id="one" style="padding: 2%;">Hoodies</div>
     <div class="col" id="two" style="padding: 2%;">Graphic Tees</div>
     <div class="col" id="three" style="padding: 2%;">Headwear</div>
-    <div class="col" id="four" style="padding: 2%;"><router-link to="/products">Shop Now</router-link></div>
-  </div>
-
+    <div class="col" id="four" style="padding: 2%;"><router-link to="/products">Shop Now</router-link></div> -->
+  <!-- </div> -->
+      
   </div>
 </template>
 

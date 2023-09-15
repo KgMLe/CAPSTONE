@@ -85,7 +85,7 @@
 
   img[alt= "logo"]{
     padding-top: 5%;
-    width: 15rem;
+    width: 10rem;
 
     
 }

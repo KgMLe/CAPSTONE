@@ -208,21 +208,6 @@ admin_panel_settings
       <th>Shipping Address</th>
       <th>Delivery Status</th>
     </tr>
-    <tbody v-if = "orders">
-      <tr v-for="order in orders" :key= "order.orderID">
-      <td>{{ order.orderID }}</td>
-      <td> {{ }}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    </tbody>
-    <div v-else class="row justify-content-center">
-  <SpinnerComp/>
-</div>
   </table>
 </div>
     </div>
@@ -342,7 +327,7 @@ this.$store.dispatch('updateProduct')
 /* Striped Rows */
 table, tbody, thead {
 border-collapse: collapse;
-width: 100%;
+/* width: 100%; */
 margin-bottom: 20px;
 }
 

@@ -15,11 +15,16 @@
             </router-link>
              </li>
              <li class="nav-item">
-               <router-link class="nav-link" to="/about"><span class="material-symbols-outlined">description</span>
+               <router-link class="nav-link dropdown-toggle" id="aboutDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" to="/about"><span class="material-symbols-outlined">description</span>
               </router-link>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdownMenuLink">
+                <li><router-link class="dropdown-item" to="/about">About Us</router-link></li>
+                <li><a class="dropdown-item" href="#">Blog</a></li>
+                <li><a class="dropdown-item" href="#">Contact us</a></li>
+              </ul>
              </li>
              <li class="nav-item">
-               <router-link class="nav-link" to="/products"><span class="material-symbols-outlined" style="padding-left: 5%;">
+               <router-link class="nav-link mx-2" to="/products"><span class="material-symbols-outlined" style="padding-left: 5%;">
 local_mall
 </span></router-link>
              </li>
@@ -82,6 +87,7 @@ local_mall
   </div>
 </nav>
 <!-- new navbar -->
+
 <!-- <nav class="slidemenu"> -->
   
   <!-- Item 1 -->
@@ -151,6 +157,12 @@ input{
 img[alt= "logo"]{
     width: 15rem;
     padding-right: 5px !important;
+}
+
+@media screen and (min-width:992px){
+  .nav-item {
+   line-height:80px;
+    }
 }
 /* second one */
 

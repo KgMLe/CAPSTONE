@@ -36,8 +36,11 @@
             </div>
             </div>
             </div>
-            <div style="padding: 5%;">
-  <div class="row" style="background-color: black; color: white;">
+            <div>
+  <div class='container-fluid mx-auto mt-5 mb-5 col-12' style="text-align: center;">
+    <div class="hd"> <h2>Why Shop With Us</h2></div>
+    <!-- <p><small class="text-muted">Always render more and better service than <br />is expected of you, no matter what your ask may be.</small></p> -->
+    <div class="row" style="background-color: black; color: white;">
     <div class="col radius" ><h3><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#BC6C25" class="bi bi-cart2" viewBox="0 0 16 16">
   <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
 </svg>FREE SHIPPING</h3><p>Free shipping on all our orders</p></div>
@@ -49,15 +52,20 @@
   <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z"/>
 </svg>100% SATISFACTION</h3><p>Free returns and exchanges within 7 days</p></div>
   </div>
-  </div>
+  <br>
+    <div class="ft">
+        <div class="btn btn-primary"> <router-link to="/">Shop Items</router-link></div>
+    </div>
+</div>  
+</div>
 
     <div class="container text-center">
   <div class="row">
     <h1> Read Our Latest Blog Posts Here </h1>
-    <div class="col text-center" id="blogpost" style="padding: 3%;">
+    <div class="col text-center" id="blogpost" style="padding: 13%;">
     <p> The Most Important Article <br> We Will Ever Write.</p>
     </div>
-    <div class="col text-center" id="blog" style="padding: 3%">
+    <div class="col text-center" id="blog" style="padding: 13%">
     <p>Cross T shirts and Their Designs</p>
     </div>
   </div>
@@ -102,9 +110,10 @@ p{
 
 }
 
+
 #blog, #blogpost{
   background-color: #BC6C25;
-  background-image: url(https://theword.org.za/wp-content/uploads/2022/11/about-word-1.png);
+  /* background-image: url(https://theword.org.za/wp-content/uploads/2022/11/about-word-1.png); */
   border: 7px white solid;
   border-radius: 10px;
   color: white; 
@@ -146,6 +155,7 @@ color: #8d8f90;
 background: url("https://i.postimg.cc/RFVw1677/OUR-STORY-1.png") no-repeat;
 position: relative;
 background-size: cover;
+size: 100%;
 }
 .page-caption {
  padding-top: 170px;
@@ -155,17 +165,17 @@ background-size: cover;
  line-height: 1;
  text-align: center;
 }
-        /* Card Section Styles */
-        .card-section {
-            position: relative;
-            bottom: 60px;
-        }
-        .card-block {
-            padding: 80px;
-        }
-        .section-title {
-            margin-bottom: 60px;
-        }
+/* Card Section Styles */
+.card-section {
+ position: relative;
+ bottom: 30px;
+}
+.card-block {
+ padding: 80px;
+}
+.section-title {
+margin-bottom: 60px;
+}
 
 /* contact page */
 
@@ -288,7 +298,12 @@ background-size: cover;
 
 
 @media (max-width: 1024px) {
-
+.page-header {
+background: url("https://i.postimg.cc/RFVw1677/OUR-STORY-1.png") no-repeat;
+position: relative;
+background-size: cover;
+size: 100%;
+}
  .container {
     justify-content: space-between;
   }
@@ -310,7 +325,7 @@ background-size: cover;
     text-align: center;
   }
 
-  .arch_contact_us_duplicate .input {
+ .input {
     height: 45px;
   }
 
@@ -343,7 +358,7 @@ background-size: cover;
     margin-left: 0px;
   }
 
-.responsive-cell-block.wk-mobile-12.wk-ipadp-6.wk-desk-5.wk-tab-10 {
+.responsive-cell-block.wk-mobile-12.wk-ipadp-6.wk-desk-5 {
     text-align: left;
     padding-top: 0px;
     padding-right: 20px;

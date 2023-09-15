@@ -29,7 +29,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form class="pb-modalreglog-form-reg" form @submit.prevent="updatedUser">
+        <form class="pb-modalreglog-form-reg" form @submit.prevent="updatedUser" :user = "user">
             <div class="mb-3">
               <div id="pb-modalreglog-progressbar"></div>
                 </div>
@@ -179,7 +179,7 @@ export default {
     },
      
     deleteProfile(){
-      return this.$store.dispatch ('deleteUser') 
+      return this.$store.dispatch ('deleteUser') || cookies.get('user').result;
     }
 
     },
