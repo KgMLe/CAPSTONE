@@ -310,9 +310,9 @@ export default createStore({
       },
 
       // fetch user order
-        async fetchUserOrders(context, payload){
+        async fetchUserOrders(context, id){
         try {
-          const {msg,token, result} = await axios.get(`${anchored}/user/${payload}/orders`)
+          const {msg,token, result} = await axios.get(`${anchored}/user/${id}/orders`)
           if (result) {
             context.commit("setOrder", { result, msg });
             cookies.set("user", { msg, token, result });
