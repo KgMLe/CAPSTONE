@@ -55,6 +55,9 @@ local_mall
                       <a class="dropdown-item btn-danger" data-bs-toggle="modal" data-bs-target="#modalConfirmDelete" >Logout</a>
                     </ul>
                 </li>
+                <li class="nav-item">
+               <router-link class="nav-link" to="/contact">Contact</router-link>
+             </li>
                 <div class="modal fade" id="modalConfirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-sm modal-danger">
     <div class="modal-content text-center">
@@ -81,6 +84,11 @@ local_mall
     </div>
   </div>
 </nav>
+
+<!-- second navbar -->
+<!-- Navbar -->
+
+<!-- Navbar -->
 </div>
 </template>
 

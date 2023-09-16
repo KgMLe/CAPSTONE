@@ -1,6 +1,6 @@
 <template>
   <div>
-  <div class="container-fluid">
+  <div class="container-fluid" style="padding: 5%;">
     <div class="row">
       <div class="container" style="padding: 3%;">
 
@@ -25,7 +25,6 @@
               <li><a href="#">XXL</a></li>
             </ul>
           </span>
-<li class="list-group-item"><button  class="btn card-link" data-toggle="modal" data-target="#modalAbandonedCart">Add to Cart</button></li>
 </ul>
 
 <!-- Modal: modalAbandonedCart-->
@@ -76,32 +75,7 @@ aria-hidden="true" data-backdrop="false">
 
 </div>
 
-<!-- modal for single product -->
-<!-- <div class="container">
-  <div class="images">
-    <img :src="$route.query.prodURL" :alt="$route.query.prodName"/>  
-  </div>
-  <p class="pick">choose size</p>
-  <div class="sizes">
-    <div class="size">5</div>
-    <div class="size">6</div>
-    <div class="size">7</div>
-    <div class="size">8</div>
-    <div class="size">9</div>
-    <div class="size">10</div>
-    <div class="size">11</div>
-    <div class="size">12</div>
-  </div>
-  <div class="product">
-    <p>{{$route.query.prodCat}}</p>
-    <h1>{{$route.query.prodName}}</h1>
-    <h2>R{{ $route.query.prodPrice  }}</h2>
-    <p class="desc">{{ $route.query.prodDesc}}</p>
-    <div class="buttons">
-      <button class="add">Add to Cart</button>
-    </div>
-  </div>
-</div> -->
+
   </div>
   </template>
   
@@ -181,7 +155,7 @@ body {
 }
 
 p {
-  font-size: 0.6em;
+ 
   color: rgb(156, 82, 3);
   letter-spacing: 1px;
 }

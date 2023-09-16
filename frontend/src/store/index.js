@@ -310,16 +310,35 @@ export default createStore({
       },
 
       // fetch user order
-        async fetchUserOrder(context, id){
+        async fetchUserOrders(context, payload){
         try {
-          const {data} = await axios.get(`${anchored}/user/${id}/orders`)
-          context.commit('setOrder', data )
+          const {msg,token, result} = await axios.get(`${anchored}/user/${payload}/orders`)
+          if (result) {
+            context.commit("setOrder", { result, msg });
+            cookies.set("user", { msg, token, result });
+            authenticateUser.applyToken(token);
+            sweet({	
+              title: "msg",
+              text: `Item added to cart ` ,
+              icon: "success",
+              timer: 4000,
+            });
+            context.dispatch("setOrder");
+            router.push({ name: "cart" }); 
+          } else {
+            sweet({
+              title: "Error",
+              text: msg,
+              icon: "error",
+              timer: 4000
+            });
+          }
         }catch(e){
           context.commit('setMsg', 'An error occured')
         }
       },
 
-      // new order
+      // new user order
       async addOrder(context, payload) {
         try {
             // console.log(payload);
@@ -352,7 +371,7 @@ export default createStore({
       // delete order
       async deleteOrder(context, id) {
         try {
-          const response = await axios.delete(`${anchored}order/${id}`);
+          const response = await axios.delete(`${anchored}user/${id}/order/${id}`);
           const { msg } = response.data;
     
           if (msg) {

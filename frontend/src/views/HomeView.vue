@@ -12,7 +12,7 @@
       <router-link to="/products"> <button id="btn"> Shop Now</button></router-link>
      
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6" style="padding: 2%;">
     <img src="https://i.etsystatic.com/28379257/r/il/fa68cc/4560317533/il_fullxfull.4560317533_a1tv.jpg" alt="landing">
     </div>
   </div>
@@ -46,9 +46,9 @@ img[alt= "landing"]{
   font-size: 4rem;
   font-weight: 900;
 }
-
-.col{
-  padding: 3%;
+button{
+  border-radius: 50px;
+  padding: 10px;
 }
 
 #one, #two, #three, #four{

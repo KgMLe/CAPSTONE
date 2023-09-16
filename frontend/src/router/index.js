@@ -87,6 +87,17 @@ const routes = [
     // }
   },
 
+  {
+    path: "/contact",
+    name: "contact", 
+    component: () => import ( '../views/ContactView.vue'),
+    // afterEnter(){
+    //     if(!cookies.get('user')){
+    //       router.push ('/product/:id')
+    //     }
+    // }
+  },
+
   // {
   //   path: "/logout",
   //   name: "logout", 

@@ -102,7 +102,7 @@ export default{
         }
     },
     mounted(){
-        this.$store.dispatch('fetchOrders')
+        this.$store.dispatch('fetchUserOrders')
         
     }
 }
