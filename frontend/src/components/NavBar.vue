@@ -109,6 +109,11 @@ nav .navbar{
   padding-left: 5%;
 }
 
+router-link {
+  text-decoration: none;
+  
+}
+
 span .material-symbols-outlined{
   font-variation-settings:
   'FILL' 5,
