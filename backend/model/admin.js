@@ -5,7 +5,6 @@ const {createToken} = require('../middleware/AuthenticateUser')
 class Admin {
   adminLogin(req, res) {
     const { userEmail, userPass } = req.body;
-  
     // query
     const query = `
       SELECT userID, firstName, lastName, userEmail, userPass, userRole, userAdd
@@ -37,7 +36,7 @@ class Admin {
           } else {
             res.json({
               status: res.statusCode,
-              msg: "Invalid password or you have not registered"
+              msg: "Invalid password or you have not registered as a user"
             });
             console.log(token);
           }

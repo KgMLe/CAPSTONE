@@ -96,7 +96,7 @@ routes.patch("user/:id/order/:id", bodyParser.json(), (req, res) => {
   orders.updateOrder(req, res);
 })
 // delete order
-routes.delete("user/:id/order/:id", (req, res) => {
+routes.delete("/order/:id", (req, res) => {
   orders.deleteOrder(req, res);
 })
  

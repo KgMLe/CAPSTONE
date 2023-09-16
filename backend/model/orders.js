@@ -62,6 +62,7 @@ fetchUserOrders(req, res) {
   using (prodID)
   where u.userID = ${req.params.id};
   `
+  
   db.query(query, (err, result) => {
       if (err) {
           console.log(err)
