@@ -95,14 +95,14 @@ export default{
     },
 
     orders(){
-            return this.$store.state.orders|| cookies.get('user').result;
+            return this.$store.state.orders
         },
         products(){
             return this.$store.state.products
         }
     },
     mounted(){
-        this.$store.dispatch('fetchUserOrders')
+        this.$store.dispatch('fetchUserOrders')|| cookies.get('user').result; 
         
     }
 }
