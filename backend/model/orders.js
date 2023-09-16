@@ -49,8 +49,8 @@ fetchOrders(req, res) {
     })
   }
 
-//user order
-fetchUserOrder(req, res) {
+//user orders
+fetchUserOrders(req, res) {
   const query = `
   select o.orderID, u.firstName, u.lastName,p.prodName, p.prodUrl, p.prodPrice, u.userAdd
   from orders o
@@ -96,21 +96,21 @@ addOrder(req, res) {
   }
 
   // update order by id
-//   updateOrder(req, res) {
-//     const query = `
-//     update orders
-//     set ?
-//     where orderID = ${req.params.id};
-//     `
-//     db.query(query,[data, req.params.id],
-//         (err) => {
-//             if(err) throw err
-//             res.json({
-//                 status: res.statusCode,
-//                 msg:"Product updated."
-//             })
-//         })
-//   }
+  updateOrder(req, res) {
+    const query = `
+    update orders
+    set ?
+    where orderID = ${req.params.id};
+    `
+    db.query(query,[data, req.params.id],
+        (err) => {
+            if(err) throw err
+            res.json({
+                status: res.statusCode,
+                msg:"Product updated."
+            })
+        })
+  }
   
   // delete order by id
   deleteOrder(req, res) {

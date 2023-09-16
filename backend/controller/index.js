@@ -92,11 +92,11 @@ routes.post("/order/new",  bodyParser.json(),(req, res)=>{
   orders.addOrder(req, res)
 })
 // update order
-routes.patch("/order/:id", bodyParser.json(), (req, res) => {
+routes.patch("user/:id/order/:id", bodyParser.json(), (req, res) => {
   orders.updateOrder(req, res);
 })
 // delete order
-routes.delete("/order/:id", (req, res) => {
+routes.delete("user/:id/order/:id", (req, res) => {
   orders.deleteOrder(req, res);
 })
  
